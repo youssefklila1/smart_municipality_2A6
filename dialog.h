@@ -1,6 +1,6 @@
 #ifndef DIALOG_H
 #define DIALOG_H
-
+//test
 #include "materiauxPoss.h"
 #include "materiauxmanq.h"
 #include "matmaint.h"

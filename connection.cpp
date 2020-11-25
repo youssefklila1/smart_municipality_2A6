@@ -1,5 +1,6 @@
 #include "connection.h"
 #include<QDebug>
+//test tutoriel
 Connection::Connection()
 {
 

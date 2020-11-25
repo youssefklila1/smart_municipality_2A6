@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/resource">
+        <file>img/background.png</file>
+        <file>img/background2.png</file>
+        <file>img/baladitech.png.png</file>
+        <file>img/login.png</file>
+    </qresource>
+</RCC>

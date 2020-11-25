@@ -1,0 +1,9 @@
+<! DOCTYPE RCC><RCC version=''1.0''>
+   <qresource>
+       <file>photos/background.png</file>
+       <file>photos/background2.png</file>
+        <file>photos/entete.png</file>
+        <file>photos/login.png</file>
+
+ <qresource>
+</RCC>

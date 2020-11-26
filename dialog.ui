@@ -26,7 +26,7 @@
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -45,7 +45,7 @@
       <enum>QTabWidget::Triangular</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_12">
       <attribute name="title">
@@ -312,6 +312,16 @@
         <bool>true</bool>
        </property>
       </widget>
+      <widget class="QComboBox" name="comboBox_fonction">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>30</y>
+         <width>73</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
       <zorder>label_18</zorder>
       <zorder>label</zorder>
       <zorder>label_2</zorder>
@@ -333,6 +343,7 @@
       <zorder>label_8</zorder>
       <zorder>anneesexp_ajouter</zorder>
       <zorder>pushButton</zorder>
+      <zorder>comboBox_fonction</zorder>
      </widget>
      <widget class="QWidget" name="tab_13">
       <attribute name="title">

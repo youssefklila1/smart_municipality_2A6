@@ -45,7 +45,7 @@
       <enum>QTabWidget::Triangular</enum>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_6">
       <attribute name="icon">
@@ -188,8 +188,8 @@
       <widget class="QComboBox" name="comboBox_3">
        <property name="geometry">
         <rect>
-         <x>110</x>
-         <y>380</y>
+         <x>80</x>
+         <y>280</y>
          <width>73</width>
          <height>22</height>
         </rect>
@@ -198,24 +198,14 @@
       <widget class="QLabel" name="label_30">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>290</y>
+         <x>30</x>
+         <y>280</y>
          <width>56</width>
          <height>16</height>
         </rect>
        </property>
        <property name="text">
         <string>autre</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_12">
-       <property name="geometry">
-        <rect>
-         <x>70</x>
-         <y>290</y>
-         <width>113</width>
-         <height>22</height>
-        </rect>
        </property>
       </widget>
       <zorder>label_21</zorder>
@@ -230,7 +220,6 @@
       <zorder>pushButton_2</zorder>
       <zorder>comboBox_3</zorder>
       <zorder>label_30</zorder>
-      <zorder>lineEdit_12</zorder>
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
@@ -610,7 +599,7 @@
       <enum>QTabWidget::Triangular</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_7">
       <attribute name="title">

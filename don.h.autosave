@@ -5,7 +5,7 @@
 #include <QSqlQueryModel>
 class Don
 {
-    int matricule,valeur;
+    int matricule,valeur,id;
     QString source,type,autre;
 
 public:

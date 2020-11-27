@@ -19,6 +19,7 @@ SOURCES += \
     connection.cpp \
     dialog.cpp \
     don.cpp \
+    famille.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -26,6 +27,7 @@ HEADERS += \
     connection.h \
     dialog.h \
     don.h \
+    famille.h \
     mainwindow.h
 
 FORMS += \

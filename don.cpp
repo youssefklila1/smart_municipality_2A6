@@ -4,10 +4,10 @@
 #include <QSqlQueryModel>
 #include "dialog.h"
 
-Don::Don(int matricule ,int type_don ,int valeur ,QString source,QString autre)
+Don::Don(int matricule ,int valeur ,QString source ,QString autre ,QString type)
 {
     this->matricule=matricule;
-    this->type_don=type_don;
+    this->type=type;
     this->valeur=valeur;
     this->source=source;
     this->autre=autre;
@@ -17,16 +17,49 @@ bool Don::ajouter()
    {
    QSqlQuery query;
    QString mat= QString::number(matricule);
-   QString type= QString::number(type_don);
    QString val= QString::number(valeur);
 
-   query.prepare("INSERT INTO CONGE (MATRICULE, NBREJ, DATECONGE, TYPECONGE )"
-                       "VALUES (?,?,?,?)");
-   query.bindValue(0, mat);
-   query.bindValue(1, type);
-   query.bindValue(2, val);
-   query.bindValue(3, source);
-   query.bindValue(4, autre);
+   query.prepare("INSERT INTO DON (ID,MATRICULE,SOURCE,TYPE,VALEUR,AUTRE)"
+                       "VALUES (:ID,:MATRICULE,:SOURCE,:TYPE,:VALEUR,:AUTRE)");
+   query.bindValue(":MATRICULE",mat);
+   query.bindValue(":SOURCE",source);
+   query.bindValue(":TYPE",type);
+   query.bindValue(":VALEUR",val);
+   query.bindValue(":AUTRE",autre);
 
    return    query.exec();
    }
+
+QSqlQueryModel * afficher(){ QSqlQueryModel *model = new QSqlQueryModel;
+  model->setQuery("SELECT * FROM DON");
+  model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
+  model->setHeaderData(1, Qt::Horizontal, QObject::tr("matricule"));
+  model->setHeaderData(2, Qt::Horizontal, QObject::tr("source"));
+  model->setHeaderData(3, Qt::Horizontal, QObject::tr("type"));
+  model->setHeaderData(4, Qt::Horizontal, QObject::tr("valeur"));
+  model->setHeaderData(5, Qt::Horizontal, QObject::tr("autre"));
+
+  return  model;
+  }
+bool Don::supprimer(int id)
+{
+QSqlQuery query;
+QString res=QString::number(id);
+
+query.prepare("Delete from DON where ID = :id ");
+query.bindValue(":id", res);
+return    query.exec();
+}
+bool Don::modifier(int matricule ,int valeur ,QString source ,QString autre ,QString type){
+    QSqlQuery query;
+    QString mt=QString::number(matricule);
+    QString vl=QString::number(valeur);
+
+    query.prepare("update DON set matricule=:matricule,valeur=:valeur,source=:source,type=:type,autre=:autre where matricule=:matricule ");
+   query.bindValue(":matricule",mt);
+  query.bindValue(":valeur",vl);
+  query.bindValue(":source",source);
+  query.bindValue(":type",type);
+  query.bindValue(":autre",autre);
+   return query.exec();
+}

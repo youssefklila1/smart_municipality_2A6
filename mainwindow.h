@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "don.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -22,5 +22,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    Don tmp1;
 };
 #endif // MAINWINDOW_H

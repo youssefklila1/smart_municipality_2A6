@@ -6,18 +6,19 @@
 
 class tache
 {
-    int matricule,identifiant,debut,fin;
-    QString libelle;
+    int matricule,identifiant;
+    QString libelle,debut,fin;
 public:
     tache(){}
-    tache(int,int,int,int,QString);
+    tache(int,int,QString,QString,QString);
 
     int get_matricule();
     int get_identifiant();
-    int get_debut();
-    int get_fin();
+    QString get_debut();
+    QString get_fin();
     QString get_libelle();
 
+    bool modifier(int,int,QString,QString,QString);
     bool ajouter();
     QSqlQueryModel * afficher();
     bool supprimer(int);

@@ -26,7 +26,7 @@
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -45,7 +45,7 @@
       <enum>QTabWidget::Triangular</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_12">
       <attribute name="title">
@@ -908,7 +908,7 @@
       <enum>QTabWidget::Triangular</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_8">
       <attribute name="title">
@@ -984,7 +984,7 @@
        </item>
        <item>
         <property name="text">
-         <string>fétes</string>
+         <string>fetes</string>
         </property>
        </item>
       </widget>
@@ -1081,7 +1081,7 @@
         <string>Afficher</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="imprimer_conge">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -1125,14 +1125,14 @@
       </widget>
       <zorder>label_45</zorder>
       <zorder>pushButton_4</zorder>
-      <zorder>pushButton_5</zorder>
+      <zorder>imprimer_conge</zorder>
       <zorder>tableView_2</zorder>
      </widget>
      <widget class="QWidget" name="tab_10">
       <attribute name="title">
        <string>Modifier</string>
       </attribute>
-      <widget class="QDateEdit" name="dateEdit_4">
+      <widget class="QDateEdit" name="date_conge_modifier">
        <property name="geometry">
         <rect>
          <x>140</x>
@@ -1181,7 +1181,7 @@
         <string>Matricule</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="comboBox_3">
+      <widget class="QComboBox" name="type_conge_modifier">
        <property name="geometry">
         <rect>
          <x>120</x>
@@ -1190,8 +1190,23 @@
          <height>22</height>
         </rect>
        </property>
+       <item>
+        <property name="text">
+         <string>maladie</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>maternite</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>fetes</string>
+        </property>
+       </item>
       </widget>
-      <widget class="QPushButton" name="pushButton_12">
+      <widget class="QPushButton" name="modifier_conge">
        <property name="geometry">
         <rect>
          <x>450</x>
@@ -1204,7 +1219,7 @@
         <string>Modifier</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="spinBox_4">
+      <widget class="QSpinBox" name="nbrej_conge_modifier">
        <property name="geometry">
         <rect>
          <x>140</x>
@@ -1227,7 +1242,7 @@
         <string>Nombre de jours</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="comboBox_6">
+      <widget class="QComboBox" name="matricule_conge_modifier">
        <property name="geometry">
         <rect>
          <x>130</x>
@@ -1257,15 +1272,15 @@
        </property>
       </widget>
       <zorder>label_46</zorder>
-      <zorder>dateEdit_4</zorder>
+      <zorder>date_conge_modifier</zorder>
       <zorder>label_27</zorder>
       <zorder>label_28</zorder>
       <zorder>label_25</zorder>
-      <zorder>comboBox_3</zorder>
-      <zorder>pushButton_12</zorder>
-      <zorder>spinBox_4</zorder>
+      <zorder>type_conge_modifier</zorder>
+      <zorder>modifier_conge</zorder>
+      <zorder>nbrej_conge_modifier</zorder>
       <zorder>label_26</zorder>
-      <zorder>comboBox_6</zorder>
+      <zorder>matricule_conge_modifier</zorder>
      </widget>
      <widget class="QWidget" name="tab_11">
       <attribute name="title">
@@ -1382,7 +1397,7 @@
       <enum>QTabWidget::Triangular</enum>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
@@ -1419,16 +1434,6 @@
         <rect>
          <x>130</x>
          <y>140</y>
-         <width>131</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="libelle_tache_ajouter">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>230</y>
          <width>131</width>
          <height>22</height>
         </rect>
@@ -1493,16 +1498,6 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="matricule_tache_ajouter">
-       <property name="geometry">
-        <rect>
-         <x>270</x>
-         <y>40</y>
-         <width>131</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QPushButton" name="AJOUTER_TACHE">
        <property name="geometry">
         <rect>
@@ -1535,18 +1530,68 @@
         <bool>true</bool>
        </property>
       </widget>
+      <widget class="QComboBox" name="combobox_libelle_tache">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>240</y>
+         <width>131</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Employes</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Chantiers</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Fournisseurs</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Materiaux</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Evenements</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Dons</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QComboBox" name="matricule_tache_ajouter">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>40</y>
+         <width>121</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
       <zorder>label_48</zorder>
       <zorder>label_38</zorder>
       <zorder>label_35</zorder>
       <zorder>debut_tache_ajouter</zorder>
-      <zorder>libelle_tache_ajouter</zorder>
       <zorder>label_57</zorder>
       <zorder>label_36</zorder>
       <zorder>identifiant_tache_ajouter</zorder>
       <zorder>label_37</zorder>
       <zorder>fin_tache_ajouter</zorder>
-      <zorder>matricule_tache_ajouter</zorder>
       <zorder>AJOUTER_TACHE</zorder>
+      <zorder>combobox_libelle_tache</zorder>
+      <zorder>matricule_tache_ajouter</zorder>
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
@@ -1641,7 +1686,7 @@
       <attribute name="title">
        <string>Modifier</string>
       </attribute>
-      <widget class="QDateEdit" name="dateEdit_7">
+      <widget class="QDateEdit" name="debut_tache_modifier">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -1677,7 +1722,7 @@
         <string>Debut tache</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_10">
+      <widget class="QPushButton" name="modifier_tache">
        <property name="geometry">
         <rect>
          <x>440</x>
@@ -1690,7 +1735,7 @@
         <string>Modifier</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="comboBox_4">
+      <widget class="QComboBox" name="libelle_tache_modifier">
        <property name="geometry">
         <rect>
          <x>120</x>
@@ -1699,6 +1744,36 @@
          <height>22</height>
         </rect>
        </property>
+       <item>
+        <property name="text">
+         <string>Employes</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Materiaux</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Evenements</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Dons</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Chantiers</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Fournisseurs</string>
+        </property>
+       </item>
       </widget>
       <widget class="QLabel" name="label_40">
        <property name="geometry">
@@ -1713,7 +1788,7 @@
         <string>Identifiant tache</string>
        </property>
       </widget>
-      <widget class="QDateEdit" name="dateEdit_8">
+      <widget class="QDateEdit" name="fin_tache_modifier">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -1749,7 +1824,7 @@
         <string>matricule de l'employé effectuant la tache</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_19">
+      <widget class="QLineEdit" name="identifiant_tache_modifier">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -1759,7 +1834,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QComboBox" name="comboBox_9">
+      <widget class="QComboBox" name="matricule_tache_modifier">
        <property name="geometry">
         <rect>
          <x>280</x>
@@ -1789,17 +1864,17 @@
        </property>
       </widget>
       <zorder>label_50</zorder>
-      <zorder>dateEdit_7</zorder>
+      <zorder>debut_tache_modifier</zorder>
       <zorder>label_43</zorder>
       <zorder>label_42</zorder>
-      <zorder>pushButton_10</zorder>
-      <zorder>comboBox_4</zorder>
+      <zorder>modifier_tache</zorder>
+      <zorder>libelle_tache_modifier</zorder>
       <zorder>label_40</zorder>
-      <zorder>dateEdit_8</zorder>
+      <zorder>fin_tache_modifier</zorder>
       <zorder>label_41</zorder>
       <zorder>label_56</zorder>
-      <zorder>lineEdit_19</zorder>
-      <zorder>comboBox_9</zorder>
+      <zorder>identifiant_tache_modifier</zorder>
+      <zorder>matricule_tache_modifier</zorder>
      </widget>
      <widget class="QWidget" name="tab_7">
       <attribute name="title">

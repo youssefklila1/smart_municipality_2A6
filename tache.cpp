@@ -4,7 +4,7 @@
 #include <QSqlQueryModel>
 #include "dialog.h"
 
-tache::tache(int matricule ,int identifiant ,int debut ,int fin,QString libelle)
+tache::tache(int matricule ,int identifiant ,QString debut ,QString fin,QString libelle)
 {
 this->matricule=matricule;
 this->identifiant=identifiant;
@@ -18,15 +18,14 @@ bool tache::ajouter()
 QSqlQuery query;
 QString mat3= QString::number(matricule);
 QString id= QString::number(identifiant);
-QString db= QString::number(debut);
-QString fi= QString::number(fin);
+
 
 query.prepare("INSERT INTO TACHE (MATRICULE,IDENTIFIANT,DEBUT,FIN,LIBELLE )"
                     "VALUES (?,?,?,?,?)");
 query.bindValue(0, mat3);
 query.bindValue(1, id);
-query.bindValue(2, db);
-query.bindValue(3, fi);
+query.bindValue(2, debut);
+query.bindValue(3, fin);
 query.bindValue(4, libelle);
 
 return    query.exec();
@@ -50,4 +49,23 @@ QString res = QString::number(mat3);
 query.prepare("Delete from TACHE where MATRICULE = :mat3 ");
 query.bindValue(":mat3", res);
 return    query.exec();
+}
+
+bool tache::modifier(int matricule ,int identifiant ,QString debut ,QString fin,QString libelle)
+{
+
+    QSqlQuery query;
+    QString mat3= QString::number(matricule);
+    QString id= QString::number(identifiant);
+
+
+    query.prepare("update TACHE set IDENTIFIANT=:id,DEBUT=:debut,FIN=:fin,LIBELLE=:libelle where MATRICULE=:mat3");
+    query.bindValue(":mat3",mat3);
+    query.bindValue(":id",id);
+    query.bindValue(":debut",debut);
+    query.bindValue(":fin",fin);
+    query.bindValue(":libelle",libelle);
+
+
+    return    query.exec();
 }

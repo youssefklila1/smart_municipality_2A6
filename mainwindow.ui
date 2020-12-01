@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QPushButton" name="connexion">
@@ -82,7 +82,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="resources.qrc">:/resource/img/background.png</pixmap>
+       <pixmap>:/resource/img/background.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -185,7 +185,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="resources.qrc">:/resource/img/background2.png</pixmap>
+       <pixmap>:/resource/img/background2.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -213,7 +213,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resources.qrc">:/resource/img/baladitech.png.png</pixmap>
+     <pixmap>:/resource/img/baladitech.png.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -241,8 +241,6 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

@@ -6,11 +6,11 @@
 
 
 class employe{
-    int matricule,anneesexp,datenaiss;
-    QString nom ,prenom ,email,situationfamiliale,fonction;
+    int matricule,anneesexp;
+    QString nom ,prenom ,email,situationfamiliale,fonction,datenaiss;
 public:
     employe(){}
-    employe(int,QString,QString,QString,QString,QString,int,int);
+    employe(int,QString,QString,QString,QString,QString,QString,int);
 
     QString get_nom();
     QString get_prenom();
@@ -21,7 +21,7 @@ public:
     QString get_fonction();
     int get_anneesexp();
 
-    bool modifier(int,QString,QString,QString,QString,QString,int,int);
+    bool modifier(int,QString,QString,QString,QString,QString,QString,int);
     bool ajouter();
     QSqlQueryModel * afficher();
     bool supprimer(int);

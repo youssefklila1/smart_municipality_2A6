@@ -18,6 +18,7 @@ public:
     QString get_dateconge();
     QString get_typeconge();
 
+    bool modifier(int,int,QString,QString);
     bool ajouter();
     QSqlQueryModel * afficher();
     bool supprimer(int);

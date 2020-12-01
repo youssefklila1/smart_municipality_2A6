@@ -36,6 +36,12 @@ private slots:
 
     void on_Trier_employe_clicked();
 
+    void on_imprimer_conge_clicked();
+
+    void on_modifier_conge_clicked();
+
+    void on_modifier_tache_clicked();
+
 private:
     Ui::Dialog *ui;
      employe tempemploye;

@@ -11,6 +11,7 @@
 #include <QMessageBox>
 #include<QComboBox>
 
+
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
@@ -22,9 +23,9 @@ Dialog::Dialog(QWidget *parent) :
      ui->combobox_matricule_conge->setModel(tempemploye.afficher());
      ui->matricule_employe_modifier->setModel(tempemploye.afficher());
      ui->recherche_employe_matricule->setModel(tempemploye.afficher());
-
-
-
+     ui->matricule_conge_modifier->setModel(tempemploye.afficher());
+    ui->matricule_tache_modifier->setModel(tempemploye.afficher());
+     ui->matricule_tache_ajouter->setModel(tempemploye.afficher());
 
 
 }
@@ -47,7 +48,7 @@ void Dialog::on_pushButton_clicked()
         QString nom =ui->nom_employe_ajouter->text();
         QString prenom =ui->prenom_employe_ajouter->text();
         QString email =ui->email_employe_ajouter->text();
-        int datenaiss =ui->date_employe_ajouter->text().toInt();
+        QString datenaiss =ui->date_employe_ajouter->text();
         int anneesexp=ui->anneesexp_ajouter->text().toInt();
         employe e(matricule,nom,prenom,email,situationfamiliale,fonction,datenaiss,anneesexp);
         bool test= e.ajouter();
@@ -102,7 +103,11 @@ void Dialog::on_Ajouter_clicked()
     Conges C(matricule,nbrej,dateconge,typeconge);
     bool test= C.ajouter();
     if (test)
-    {    ui->tableView_2->setModel(tempconge.afficher());
+
+    {
+
+        ui->matricule_conge_modifier->setModel(tempemploye.afficher());
+        ui->tableView_2->setModel(tempconge.afficher());
         QMessageBox::information(nullptr, QObject::tr("Ajouter un congé "),
                           QObject::tr("congé ajouté.\n"
                                       "Click Cancel to exit."), QMessageBox::Cancel);
@@ -122,6 +127,8 @@ void Dialog::on_supprimer_conge_clicked()
         bool test=tempconge.supprimer(res);
         if(test)
         {
+
+            ui->matricule_conge_modifier->setModel(tempemploye.afficher());
             ui->tableView_2->setModel(tempconge.afficher());
             QMessageBox::information(nullptr, QObject::tr("Supprimer un congé"),
                         QObject::tr("congé supprimé.\n"
@@ -136,16 +143,17 @@ void Dialog::on_supprimer_conge_clicked()
 
 void Dialog::on_AJOUTER_TACHE_clicked()
 {
-    int matricule =ui->matricule_tache_ajouter->text().toInt();
+    int matricule =ui->matricule_tache_ajouter->currentText().toInt();
         int identifiant =ui->identifiant_tache_ajouter->text().toInt();
-        int debut =ui->debut_tache_ajouter->text().toInt();
-        int fin =ui->fin_tache_ajouter->text().toInt();
-        QString libelle =ui->libelle_tache_ajouter->text();
+        QString debut =ui->debut_tache_ajouter->text();
+        QString fin =ui->fin_tache_ajouter->text();
+        QString libelle=ui->combobox_libelle_tache->currentText();
 
         tache t(matricule,identifiant,debut,fin,libelle);
         bool test= t.ajouter();
         if (test)
-        {    ui->tableView_3->setModel(temptache.afficher());
+        {   ui->matricule_tache_modifier->setModel(tempemploye.afficher());
+            ui->tableView_3->setModel(temptache.afficher());
             QMessageBox::information(nullptr, QObject::tr("Ajouter une tache "),
                               QObject::tr("tache ajouté.\n"
                                           "Click Cancel to exit."), QMessageBox::Cancel);
@@ -169,6 +177,7 @@ void Dialog::on_supprimer_tache_clicked()
         bool test=temptache.supprimer(res);
         if(test)
         {
+             ui->matricule_tache_modifier->setModel(tempemploye.afficher());
             ui->tableView_3->setModel(temptache.afficher());
             QMessageBox::information(nullptr, QObject::tr("Supprimer une tache"),
                         QObject::tr("tache supprimé.\n"
@@ -194,7 +203,7 @@ void Dialog::on_modifier_employe_clicked()
         QString nom =ui->nom_employe_modifier->text();
         QString prenom =ui->prenom_employe_modifier->text();
         QString email =ui->email_employe_modifier->text();
-        int datenaiss =ui->date_employe_modifier->text().toInt();
+        QString datenaiss =ui->date_employe_modifier->text();
         int anneesexp=ui->anneesex_employe_modifier->text().toInt();
 
         employe e;
@@ -225,4 +234,64 @@ void Dialog::on_Trier_employe_clicked()
 {
     ui->tableView->setModel(tempemploye.tri_ref());
 
+}
+
+/*void Dialog::on_imprimer_conge_clicked()
+{ QPrinter printer;
+    printer.setPrinterName("desierd printer name");
+    QPrintDialog dialog (&printer,this);
+    if(dialog.exec() == QDialog::Rejected) return;
+    ui->tableView_2->print(&printer);
+
+}*/
+
+void Dialog::on_modifier_conge_clicked()
+{
+    int matricule =ui->matricule_conge_modifier->currentText().toInt();
+    int nbrej =ui->nbrej_conge_modifier->text().toInt();
+    QString dateconge =ui->date_conge_modifier->text();
+    QString typeconge =ui->type_conge_modifier->currentText();
+        Conges C;
+        bool test = C.modifier(matricule,nbrej,dateconge,typeconge);
+        if (test)
+        {
+            ui->tableView_2->setModel(tempconge.afficher());
+            QMessageBox::information(nullptr, QObject::tr("modifier un conge "),
+            QObject::tr("conge modifier.\n"
+                                          "Click Cancel to exit."), QMessageBox::Cancel);
+
+        }
+        else
+                {
+              QMessageBox::critical(nullptr, QObject::tr("modifier un conge"),
+                            QObject::tr("Erreur !\n"
+                                        "Click Cancel to exit."), QMessageBox::Cancel);
+                }
+
+}
+
+void Dialog::on_modifier_tache_clicked()
+{
+    int matricule =ui->matricule_tache_modifier->currentText().toInt();
+        int identifiant =ui->identifiant_tache_modifier->text().toInt();
+        QString debut =ui->debut_tache_modifier->text();
+        QString fin =ui->fin_tache_modifier->text();
+        QString libelle =ui->libelle_tache_modifier->currentText();
+
+        tache t;
+        bool test = t.modifier(matricule,identifiant,debut,fin,libelle);
+        if (test)
+        {
+            ui->tableView_3->setModel(temptache.afficher());
+            QMessageBox::information(nullptr, QObject::tr("modifier une tache "),
+            QObject::tr("tache modifier.\n"
+                                          "Click Cancel to exit."), QMessageBox::Cancel);
+
+        }
+        else
+                {
+              QMessageBox::critical(nullptr, QObject::tr("modifier une tache"),
+                            QObject::tr("Erreur !\n"
+                                        "Click Cancel to exit."), QMessageBox::Cancel);
+                }
 }

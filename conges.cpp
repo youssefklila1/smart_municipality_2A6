@@ -43,6 +43,35 @@
      return model;
     }
 
+
+    bool Conges::modifier(int matricule ,int nbrej ,QString dateconge ,QString typeconge)
+    {
+
+        QSqlQuery query;
+        QString mat2= QString::number(matricule);
+        QString nb= QString::number(nbrej);
+
+        query.prepare("update CONGE set NBREJ=:nb,DATECONGE=:dateconge,TYPECONGE=:typeconge where MATRICULE=:mat2");
+        query.bindValue(":mat2",mat2);
+        query.bindValue(":nb",nb);
+        query.bindValue(":dateconge",dateconge);
+        query.bindValue(":typeconge",typeconge);
+
+        return    query.exec();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     bool Conges::supprimer(int mat2)
     {
     QSqlQuery query;

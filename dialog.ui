@@ -26,7 +26,7 @@
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -45,7 +45,7 @@
       <enum>QTabWidget::Triangular</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_6">
       <attribute name="icon">
@@ -286,7 +286,7 @@
         <string>Trier</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="radioButton">
+      <widget class="QRadioButton" name="type_trie">
        <property name="geometry">
         <rect>
          <x>70</x>
@@ -299,7 +299,7 @@
         <string>Type</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="radioButton_2">
+      <widget class="QRadioButton" name="matricule_trie">
        <property name="geometry">
         <rect>
          <x>70</x>
@@ -309,7 +309,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>Etat</string>
+        <string>matricule</string>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton">
@@ -325,7 +325,7 @@
         <string>Statistiques</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="afficher_don_trier">
        <property name="geometry">
         <rect>
          <x>110</x>
@@ -360,10 +360,10 @@
       <zorder>label_22</zorder>
       <zorder>tableDon</zorder>
       <zorder>label_5</zorder>
-      <zorder>radioButton</zorder>
-      <zorder>radioButton_2</zorder>
+      <zorder>type_trie</zorder>
+      <zorder>matricule_trie</zorder>
       <zorder>pushButton</zorder>
-      <zorder>pushButton_3</zorder>
+      <zorder>afficher_don_trier</zorder>
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
@@ -595,7 +595,7 @@
         <string>Saisir la matricule du don à supprimer</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="supprimer_don">
        <property name="geometry">
         <rect>
          <x>330</x>
@@ -630,7 +630,7 @@
       <zorder>label_24</zorder>
       <zorder>label_10</zorder>
       <zorder>matricule_supprimer_don</zorder>
-      <zorder>pushButton_5</zorder>
+      <zorder>supprimer_don</zorder>
      </widget>
     </widget>
     <widget class="QLabel" name="label_19">
@@ -717,7 +717,7 @@
         <string>Besoin</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="comboBox">
+      <widget class="QComboBox" name="besoin_ajouter_famille">
        <property name="geometry">
         <rect>
          <x>90</x>
@@ -726,8 +726,23 @@
          <height>21</height>
         </rect>
        </property>
+       <item>
+        <property name="text">
+         <string>argent</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>vetements</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>nourriture</string>
+        </property>
+       </item>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_6">
+      <widget class="QLineEdit" name="matricule_ajouter_famille">
        <property name="geometry">
         <rect>
          <x>90</x>
@@ -737,7 +752,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_7">
+      <widget class="QLineEdit" name="nom_ajouter_famille">
        <property name="geometry">
         <rect>
          <x>90</x>
@@ -792,21 +807,82 @@
         <string>région</string>
        </property>
       </widget>
+      <widget class="QSpinBox" name="nombre_ajouter_famille">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>200</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="region_ajouter_famille">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>240</y>
+         <width>301</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_35">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>300</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>matricule de don</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ajouter_famille">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>320</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ajouter </string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="id_don_ajouter_famille">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>300</y>
+         <width>211</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
       <zorder>label_25</zorder>
       <zorder>label_11</zorder>
       <zorder>label_12</zorder>
       <zorder>label_13</zorder>
-      <zorder>comboBox</zorder>
-      <zorder>lineEdit_6</zorder>
-      <zorder>lineEdit_7</zorder>
+      <zorder>besoin_ajouter_famille</zorder>
+      <zorder>matricule_ajouter_famille</zorder>
+      <zorder>nom_ajouter_famille</zorder>
       <zorder>label_31</zorder>
       <zorder>label_32</zorder>
+      <zorder>nombre_ajouter_famille</zorder>
+      <zorder>region_ajouter_famille</zorder>
+      <zorder>label_35</zorder>
+      <zorder>ajouter_famille</zorder>
+      <zorder>id_don_ajouter_famille</zorder>
      </widget>
      <widget class="QWidget" name="tab_8">
       <attribute name="title">
        <string>Afficher</string>
       </attribute>
-      <widget class="QTableView" name="tableView_2">
+      <widget class="QTableView" name="table_famille">
        <property name="geometry">
         <rect>
          <x>310</x>
@@ -814,51 +890,6 @@
          <width>361</width>
          <height>341</height>
         </rect>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_14">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>60</y>
-         <width>81</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Rechercher</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_8">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>90</y>
-         <width>281</width>
-         <height>22</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-       <property name="placeholderText">
-        <string>Saiser les premieres lettres du nom de la familles</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_6">
-       <property name="geometry">
-        <rect>
-         <x>190</x>
-         <y>140</y>
-         <width>93</width>
-         <height>28</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Rechercher </string>
        </property>
       </widget>
       <widget class="QLabel" name="label_26">
@@ -877,85 +908,69 @@
         <pixmap>../../Downloads/1.png</pixmap>
        </property>
       </widget>
+      <widget class="QPushButton" name="afficher_famille">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>120</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Afficher</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>60</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Trier</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="besoin_trie_famille">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>60</y>
+         <width>97</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>besoin</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="nbr_trie_famille">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>90</y>
+         <width>131</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>nombre membres</string>
+       </property>
+      </widget>
       <zorder>label_26</zorder>
-      <zorder>tableView_2</zorder>
+      <zorder>table_famille</zorder>
+      <zorder>afficher_famille</zorder>
       <zorder>label_14</zorder>
-      <zorder>lineEdit_8</zorder>
-      <zorder>pushButton_6</zorder>
+      <zorder>besoin_trie_famille</zorder>
+      <zorder>nbr_trie_famille</zorder>
      </widget>
      <widget class="QWidget" name="tab_9">
       <attribute name="title">
        <string>Modifier</string>
       </attribute>
-      <widget class="QLabel" name="label_16">
-       <property name="geometry">
-        <rect>
-         <x>70</x>
-         <y>60</y>
-         <width>56</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Matricule</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_17">
-       <property name="geometry">
-        <rect>
-         <x>80</x>
-         <y>110</y>
-         <width>56</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Nom</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_18">
-       <property name="geometry">
-        <rect>
-         <x>70</x>
-         <y>160</y>
-         <width>56</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Besoin</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_10">
-       <property name="geometry">
-        <rect>
-         <x>170</x>
-         <y>60</y>
-         <width>301</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_11">
-       <property name="geometry">
-        <rect>
-         <x>170</x>
-         <y>110</y>
-         <width>301</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox_2">
-       <property name="geometry">
-        <rect>
-         <x>170</x>
-         <y>160</y>
-         <width>211</width>
-         <height>21</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_27">
        <property name="geometry">
         <rect>
@@ -975,13 +990,172 @@
         <bool>true</bool>
        </property>
       </widget>
-      <zorder>label_27</zorder>
-      <zorder>label_16</zorder>
-      <zorder>label_17</zorder>
-      <zorder>label_18</zorder>
-      <zorder>lineEdit_10</zorder>
-      <zorder>lineEdit_11</zorder>
-      <zorder>comboBox_2</zorder>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>130</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Besoin</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>80</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Nom</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_38">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>280</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>matricule de don</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="id_don_modifier_famille">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>280</y>
+         <width>211</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="besoin_modifier_famille">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>130</y>
+         <width>211</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>argent</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>vetements</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>nourriture</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QSpinBox" name="nombre_modifier_famille">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>180</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="region_modifier_famille">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>220</y>
+         <width>301</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="nom_modifier_famille">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>80</y>
+         <width>301</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="matricule_modifier_famille">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>40</y>
+         <width>301</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_36">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>220</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>région</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>40</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Matricule</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_37">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>180</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>nbr de membres</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="modifier_famille">
+       <property name="geometry">
+        <rect>
+         <x>460</x>
+         <y>310</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Modifier</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="tab_10">
       <attribute name="title">
@@ -1000,7 +1174,7 @@
         <string>Matricule </string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_9">
+      <widget class="QLineEdit" name="matricule_supprimer_famille">
        <property name="geometry">
         <rect>
          <x>120</x>
@@ -1016,7 +1190,7 @@
         <string>Saisir la matricule de la famille à supprimer</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_7">
+      <widget class="QPushButton" name="supprimer_famille_2">
        <property name="geometry">
         <rect>
          <x>310</x>
@@ -1047,8 +1221,8 @@
       </widget>
       <zorder>label_28</zorder>
       <zorder>label_15</zorder>
-      <zorder>lineEdit_9</zorder>
-      <zorder>pushButton_7</zorder>
+      <zorder>matricule_supprimer_famille</zorder>
+      <zorder>supprimer_famille_2</zorder>
      </widget>
      <widget class="QWidget" name="tab_11">
       <attribute name="title">

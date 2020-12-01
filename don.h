@@ -3,6 +3,7 @@
 #include <QString>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
+
 class Don
 {
     int matricule,valeur,id;
@@ -20,6 +21,8 @@ public:
 
     bool ajouter();
     QSqlQueryModel * afficher();
+    QSqlQueryModel * afficherMatricule();
+    QSqlQueryModel * afficherType();
     bool supprimer(int);
     bool modifier(int,int,QString,QString,QString);
 };

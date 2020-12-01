@@ -11,7 +11,10 @@ Dialog::Dialog(QWidget *parent) :
     ui->setupUi(this);
     //afficher don
     ui->tableDon->setModel(tmp1.afficher());
+    //afficher famille
+    ui->table_famille->setModel(tmp2.afficher());
 
+Dialog::afficherLesDons();
 }
 
 Dialog::~Dialog()
@@ -26,7 +29,7 @@ void Dialog::on_afficher_table_don_clicked()
 }
 
 
-
+//--------------------------------------- CRUD DON ----------------------------------------------------//
 //ajouter don
 void Dialog::on_pushButton_2_clicked()
 {QMessageBox msg;
@@ -107,5 +110,141 @@ msg.exec();
     msg.setText("failed to update");
     msg.exec();
 }
+
+}
+//----------------CRUD FAMILLE--------------------------------------------//
+//remplir combo box des dons
+void Dialog::afficherLesDons(){
+
+ui->id_don_modifier_famille->clear();
+
+ui->id_don_ajouter_famille->clear();
+
+    QSqlQuery query;
+            query.prepare("SELECT ID FROM MYRIAM.DON ");
+            if(query.exec()){
+                while(query.next()){
+                    ui->id_don_modifier_famille->addItem(query.value(0).toString());
+                    ui->id_don_ajouter_famille->addItem(query.value(0).toString());
+
+                }
+            }
+}
+
+
+
+
+
+void Dialog::on_ajouter_famille_clicked()
+{
+    QMessageBox msg;
+
+
+        int matricule=ui->matricule_ajouter_famille->text().toInt();
+        int nb_membres=ui->nombre_ajouter_famille->text().toInt();
+
+        int don=ui->id_don_ajouter_famille->currentText().toInt();
+
+        QString nom=ui->nom_ajouter_famille->text();
+        QString besoin=ui->besoin_ajouter_famille->currentText();
+
+       QString region=ui->region_ajouter_famille->text();
+
+
+
+     famille f(matricule,nb_membres,don,nom,besoin,region);
+       //famille f(matricule,nb_membres,don,nom,besoin,region);
+    if(f.ajouter())
+    {
+    ui->table_famille->setModel(tmp2.afficher());
+    msg.setText("add succ");
+    msg.exec();
+
+    }else{
+        msg.setText("failed to add");
+        msg.exec();
+    }
+}
+//supprimer famille
+void Dialog::on_supprimer_famille_2_clicked()
+{QMessageBox msg;
+    famille f;
+    int matricule =ui->matricule_supprimer_famille->text().toInt();
+
+    if(f.supprimer(matricule)){
+ui->table_famille->setModel(tmp2.afficher());
+msg.setText("famille deleted succ");
+        msg.exec();
+
+    }else {
+        msg.setText("failed to delete");
+        msg.exec();
+    }
+
+}
+//modifier famille
+
+
+void Dialog::on_modifier_famille_clicked()
+{QMessageBox msg;
+
+
+    int matricule=ui->matricule_modifier_famille->text().toInt();
+    int nb_membres=ui->nombre_modifier_famille->text().toInt();
+
+    int don=ui->id_don_modifier_famille->currentText().toInt();
+
+    QString nom=ui->nom_modifier_famille->text();
+    QString besoin=ui->besoin_modifier_famille->currentText();
+
+   QString region=ui->region_modifier_famille->text();
+
+
+
+ famille f;
+ //(int matricule ,int nbr_membres,int don ,QString nom ,QString besoin ,QString region)
+if(f.modifier(matricule,nb_membres,don,nom,besoin,region))
+{
+ui->table_famille->setModel(tmp2.afficher());
+msg.setText("update succ");
+msg.exec();
+
+}else{
+    msg.setText("failed to update");
+    msg.exec();
+}
+
+}
+//---------------------------les metiers--------------------------------//
+
+//trier don
+void Dialog::on_afficher_don_trier_clicked()
+{
+
+
+if(ui->matricule_trie->isChecked()){
+
+    ui->tableDon->setModel(tmp1.afficherMatricule());
+}else if(ui->type_trie->isChecked()){
+
+    ui->tableDon->setModel(tmp1.afficherType());
+}else {
+    ui->tableDon->setModel(tmp1.afficher());
+}
+
+
+}
+//trier famille
+void Dialog::on_afficher_famille_clicked()
+{
+    if(ui->besoin_trie_famille->isChecked()){
+        ui->table_famille->setModel(tmp2.afficherBesoin());
+
+    }else if(ui->nbr_trie_famille->isChecked()){
+
+        ui->table_famille->setModel(tmp2.afficherNBR());
+    }else {
+        ui->table_famille->setModel(tmp2.afficher());
+    }
 
 }

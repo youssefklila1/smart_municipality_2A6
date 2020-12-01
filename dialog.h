@@ -3,7 +3,7 @@
 #include "don.h"
 #include <QDialog>
 #include "don.h"
-
+#include "famille.h"
 namespace Ui {
 class Dialog;
 }
@@ -25,9 +25,22 @@ private slots:
 
     void on_modifier_don_clicked();
 
+    void afficherLesDons();
+    void on_ajouter_famille_clicked();
+
+    void on_supprimer_famille_2_clicked();
+
+    void on_modifier_famille_clicked();
+
+    void on_afficher_don_trier_clicked();
+
+    void on_afficher_famille_clicked();
+
 private:
     Ui::Dialog *ui;
     Don tmp1;
+
+    famille tmp2;
 
 };
 

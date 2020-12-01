@@ -19,8 +19,7 @@ bool Don::ajouter()
    QString mat= QString::number(matricule);
    QString val= QString::number(valeur);
 
-  /* query.prepare("INSERT INTO DON (ID,MATRICULE,SOURCE,TYPE,VALEUR,AUTRE)"
-                       "VALUES (:MATRICULE,:MATRICULE,:SOURCE,:TYPE,:VALEUR,:AUTRE)");*/
+
 
    query.prepare("INSERT INTO MYRIAM.DON (ID, MATRICULE, SOURCE, TYPE, VALEUR, AUTRE) VALUES (:MATRICULE,:MATRICULE, :SOURCE,:TYPE,:VALEUR,:AUTRE )");
 
@@ -58,7 +57,7 @@ bool Don::modifier(int matricule ,int valeur ,QString source ,QString autre ,QSt
     QString mt=QString::number(matricule);
     QString vl=QString::number(valeur);
 
-    query.prepare("update MYRIAM.DON  set matricule=:matricule,valeur=:valeur,source=:source,type=:type,autre=:autre where matricule=:matricule ");
+    query.prepare("update MYRIAM.DON  set matricule=:matricule,valeur=:valeur,source=:source,type=:type,autre=:autre,id=:matricule where matricule=:matricule ");
    query.bindValue(":matricule",mt);
   query.bindValue(":valeur",vl);
   query.bindValue(":source",source);
@@ -66,3 +65,26 @@ bool Don::modifier(int matricule ,int valeur ,QString source ,QString autre ,QSt
   query.bindValue(":autre",autre);
    return query.exec();
 }
+
+QSqlQueryModel * Don::afficherMatricule(){ QSqlQueryModel *model = new QSqlQueryModel;
+  model->setQuery("SELECT * FROM MYRIAM.DON ORDER BY matricule");
+  model->setHeaderData(0, Qt::Horizontal, QObject::tr("matricule"));
+  model->setHeaderData(1, Qt::Horizontal, QObject::tr("source"));
+  model->setHeaderData(2, Qt::Horizontal, QObject::tr("type"));
+  model->setHeaderData(3, Qt::Horizontal, QObject::tr("valeur"));
+  model->setHeaderData(4, Qt::Horizontal, QObject::tr("autre"));
+  model->setHeaderData(5, Qt::Horizontal, QObject::tr("id"));
+
+  return  model;
+  }
+QSqlQueryModel * Don::afficherType(){ QSqlQueryModel *model = new QSqlQueryModel;
+  model->setQuery("SELECT * FROM MYRIAM.DON ORDER BY type");
+  model->setHeaderData(0, Qt::Horizontal, QObject::tr("matricule"));
+  model->setHeaderData(1, Qt::Horizontal, QObject::tr("source"));
+  model->setHeaderData(2, Qt::Horizontal, QObject::tr("type"));
+  model->setHeaderData(3, Qt::Horizontal, QObject::tr("valeur"));
+  model->setHeaderData(4, Qt::Horizontal, QObject::tr("autre"));
+  model->setHeaderData(5, Qt::Horizontal, QObject::tr("id"));
+
+  return  model;
+  }

@@ -20,8 +20,9 @@ bool famille::ajouter()
    QString dn= QString::number(don);
 
 
+   //query.prepare("INSERT INTO MYRIAM.FAMILLES (ID, MATRICULE, BESOIN, NBR_MEMBRES, REGION, DON,NOM) VALUES (:MATRICULE, :MATRICULE,:BESOIN, :NBR_MEMBRES, :REGION,:DON,:NOM)");
 
-query.prepare("INSERT INTO MYRIAM.FAMILLES (ID, MATRICULE, NOM, BESOIN, NBR_MEMBRES, REGION, DON) VALUES (:MATRICULE, :MATRICULE, :NBR_MEMBRES, :BESOIN, :REGION,:DON,:NOM)");
+query.prepare("INSERT INTO MYRIAM.FAMILLES (ID, MATRICULE, NOM, BESOIN, NBR_MEMBRES, REGION, DON) VALUES (:MATRICULE, :MATRICULE,:NOM,:BESOIN,'1',  :REGION,:DON)");
    query.bindValue(":MATRICULE",mat);
    query.bindValue(":NBR_MEMEBERS",nbr);
    query.bindValue(":BESOIN",besoin);
@@ -102,3 +103,18 @@ QSqlQueryModel * famille::afficherNBR(){
 
   return  model;
   }
+
+QSqlQueryModel * famille::rechercheDynamic(QString SearchName){
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT * FROM MYRIAM.FAMILLES WHERE nom LIKE '"+SearchName+"%'");
+
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("matricule"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("nom"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("besoin"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("nbr_memebres"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("region"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("don"));
+
+    return  model;
+}

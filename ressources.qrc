@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>youssef/A.png</file>
+        <file>youssef/AP.png</file>
+        <file>youssef/app.png</file>
+        <file>youssef/B.png</file>
+        <file>youssef/OP.jpg</file>
+        <file>youssef/OP.png</file>
+        <file>youssef/PP.png</file>
+        <file>youssef/tri.png</file>
+        <file>youssef/Untitled-1.jpg</file>
+        <file>youssef/Untitled-2.jpg</file>
+    </qresource>
+</RCC>

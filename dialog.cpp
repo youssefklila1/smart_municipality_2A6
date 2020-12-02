@@ -15,6 +15,7 @@ Dialog::Dialog(QWidget *parent) :
     ui->table_famille->setModel(tmp2.afficher());
 
 Dialog::afficherLesDons();
+Dialog::afficherStatistique();
 }
 
 Dialog::~Dialog()
@@ -248,3 +249,116 @@ void Dialog::on_afficher_famille_clicked()
     }
 
 }
+//recherche par nom
+void Dialog::on_lineEdit_textChanged(const QString &arg1)
+{
+    ui->table_famille->setModel(tmp2.rechercheDynamic(arg1));
+}
+
+void Dialog::on_pushButton_clicked()
+{
+    QSqlQuery query;
+
+    //nombre de dons
+            QString nb_don="";
+            query.prepare("SELECT COUNT(*) FROM MYRIAM.DON");
+            query.exec();
+            while(query.next()){
+            nb_don= query.value(0).toString();}
+
+     //nombre de famille
+
+            QString nb_famille="";
+            query.prepare("SELECT COUNT(*) FROM MYRIAM.FAMILLES");
+            query.exec();
+            while(query.next()){
+            nb_famille= query.value(0).toString();}
+
+
+
+        QBarSet *set0 = new QBarSet("Jane");
+
+
+           *set0 << nb_don.toInt()  << nb_famille.toInt()   ;
+        QBarSeries *series = new QBarSeries();
+         series->append(set0);
+         QChart *chart = new QChart();
+             chart->addSeries(series);
+             chart->setTitle("statistique dons");
+             chart->setAnimationOptions(QChart::SeriesAnimations);
+
+             QStringList categories;
+                categories << "nombre don" <<  "nombre famille" ;
+                QBarCategoryAxis *axisX = new QBarCategoryAxis();
+                axisX->append(categories);
+                chart->addAxis(axisX, Qt::AlignBottom);
+                series->attachAxis(axisX);
+
+                /*QValueAxis *axisY = new QValueAxis();
+                axisY->setRange(0,qt_besoin.toInt()+10);
+                chart->addAxis(axisY, Qt::AlignLeft);
+                series->attachAxis(axisY);*/
+
+                chart->legend()->setVisible(true);
+                    chart->legend()->setAlignment(Qt::AlignBottom);
+
+                    QChartView *chartView = new QChartView(chart);
+                    chartView->setRenderHint(QPainter::Antialiasing);
+                    chartView->setParent(ui->horizontalFrame);
+
+}
+//statistique
+void Dialog::afficherStatistique(){
+
+
+    QSqlQuery query;
+
+    //nombre de dons
+            QString nb_don="";
+            query.prepare("SELECT COUNT(*) FROM MYRIAM.DON");
+            query.exec();
+            while(query.next()){
+            nb_don= query.value(0).toString();}
+
+     //nombre de famille
+
+            QString nb_famille="";
+            query.prepare("SELECT COUNT(*) FROM MYRIAM.FAMILLES");
+            query.exec();
+            while(query.next()){
+            nb_famille= query.value(0).toString();}
+
+
+
+        QBarSet *set0 = new QBarSet("Jane");
+
+
+           *set0 << nb_don.toInt()  << nb_famille.toInt()   ;
+        QBarSeries *series = new QBarSeries();
+         series->append(set0);
+         QChart *chart = new QChart();
+             chart->addSeries(series);
+             chart->setTitle("statistique dons");
+             chart->setAnimationOptions(QChart::SeriesAnimations);
+
+             QStringList categories;
+                categories << "nombre don" <<  "nombre famille" ;
+                QBarCategoryAxis *axisX = new QBarCategoryAxis();
+                axisX->append(categories);
+                chart->addAxis(axisX, Qt::AlignBottom);
+                series->attachAxis(axisX);
+
+                /*QValueAxis *axisY = new QValueAxis();
+                axisY->setRange(0,qt_besoin.toInt()+10);
+                chart->addAxis(axisY, Qt::AlignLeft);
+                series->attachAxis(axisY);*/
+
+                chart->legend()->setVisible(true);
+                    chart->legend()->setAlignment(Qt::AlignBottom);
+
+                    QChartView *chartView = new QChartView(chart);
+                    chartView->setRenderHint(QPainter::Antialiasing);
+                    chartView->setParent(ui->horizontalFrame);
+}
+
+

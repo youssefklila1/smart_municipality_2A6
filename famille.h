@@ -19,6 +19,7 @@ public:
     QSqlQueryModel * afficher();
     QSqlQueryModel * afficherNBR();
     QSqlQueryModel * afficherBesoin();
+    QSqlQueryModel * rechercheDynamic(QString);
     bool supprimer(int);
     bool modifier(int,int,int,QString,QString,QString);
 };

@@ -16,7 +16,7 @@ public:
     QString get_prenom();
     int get_matricule();
     QString get_email();
-    int get_datenaiss();
+    QString get_datenaiss();
     QString get_situationfamiliale();
     QString get_fonction();
     int get_anneesexp();
@@ -26,7 +26,10 @@ public:
     QSqlQueryModel * afficher();
     bool supprimer(int);
     QSqlQueryModel * afficher_rech(QString reff);
+
+
     QSqlQueryModel * tri_ref();
+    QSqlQueryModel * tri_nom();
 };
 
 #endif // EMPLOYES_H

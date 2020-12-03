@@ -36,11 +36,16 @@ private slots:
 
     void on_Trier_employe_clicked();
 
-    void on_imprimer_conge_clicked();
+    void on_imprimer_clicked();
 
     void on_modifier_conge_clicked();
 
     void on_modifier_tache_clicked();
+
+    void on_pushButton_2_clicked();
+
+
+    void on_recherche_dynamique_textChanged(const QString &arg1);
 
 private:
     Ui::Dialog *ui;

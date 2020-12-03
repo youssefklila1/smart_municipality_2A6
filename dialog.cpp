@@ -10,6 +10,12 @@
 #include"tache.h"
 #include <QMessageBox>
 #include<QComboBox>
+#include<QPrinter>
+#include<QPrintDialog>
+#include<QPdfWriter>
+#include<QPainter>
+#include<QDesktopServices>
+#include<QUrl>
 
 
 Dialog::Dialog(QWidget *parent) :
@@ -20,15 +26,21 @@ Dialog::Dialog(QWidget *parent) :
      ui->tableView->setModel(tempemploye.afficher());
      ui->tableView_2->setModel(tempconge.afficher());
      ui->tableView_3->setModel(temptache.afficher());
-     ui->combobox_matricule_conge->setModel(tempemploye.afficher());
+//employe
      ui->matricule_employe_modifier->setModel(tempemploye.afficher());
      ui->recherche_employe_matricule->setModel(tempemploye.afficher());
+     ui->comboBox__supprimer_employe->setModel(tempemploye.afficher());
+//conge
      ui->matricule_conge_modifier->setModel(tempemploye.afficher());
-    ui->matricule_tache_modifier->setModel(tempemploye.afficher());
+     ui->combobox_matricule_conge->setModel(tempemploye.afficher());
+     ui->comboBox_supprimer_conge->setModel(tempemploye.afficher());
+//tache
      ui->matricule_tache_ajouter->setModel(tempemploye.afficher());
-
-
+     ui->matricule_tache_modifier->setModel(tempemploye.afficher());
+     ui->comboBox_supprimer_tache->setModel(tempemploye.afficher());
+     ui->rechercher_tache_employe->setModel(tempemploye.afficher());
 }
+
 
 Dialog::~Dialog()
 {
@@ -37,6 +49,7 @@ Dialog::~Dialog()
 
 void Dialog::on_pushButton_clicked()
 {
+    bool test;
     QString situationfamiliale;
     if(ui->situationfamilialeC->isChecked()){ situationfamiliale =ui->situationfamilialeC->text();}//radiobutton
     if(ui->situationfamilialeM->isChecked()){ situationfamiliale =ui->situationfamilialeM->text();}//radiobutton
@@ -50,12 +63,29 @@ void Dialog::on_pushButton_clicked()
         QString email =ui->email_employe_ajouter->text();
         QString datenaiss =ui->date_employe_ajouter->text();
         int anneesexp=ui->anneesexp_ajouter->text().toInt();
+
+
+        if(matricule>999999|| nom==""||prenom==""||email==""||datenaiss=="0"||anneesexp==0||nom.length()>10||prenom.length()>10)
+
+
+                     {
+                                   QMessageBox::critical(nullptr, QObject::tr("vide"),
+                                   QObject::tr("veuillez saisir tous les champs correctement!\n"), QMessageBox::Cancel);
+                                   test=false;
+
+                     }
+
+        else {
         employe e(matricule,nom,prenom,email,situationfamiliale,fonction,datenaiss,anneesexp);
-        bool test= e.ajouter();
+         test= e.ajouter(); }
         if (test)
 
         {
-
+            ui->matricule_tache_modifier->setModel(tempemploye.afficher());
+            ui->matricule_tache_ajouter->setModel(tempemploye.afficher());
+            ui->comboBox_supprimer_conge->setModel(tempemploye.afficher());
+            ui->matricule_conge_modifier->setModel(tempemploye.afficher());
+            ui->comboBox__supprimer_employe->setModel(tempemploye.afficher());
             ui->recherche_employe_matricule->setModel(tempemploye.afficher());
             ui->matricule_employe_modifier->setModel(tempemploye.afficher());
             ui->combobox_matricule_conge->setModel(tempemploye.afficher());
@@ -64,7 +94,9 @@ void Dialog::on_pushButton_clicked()
                               QObject::tr("employé ajouté.\n"
                                           "Click Cancel to exit."), QMessageBox::Cancel);
         }
-        else
+
+
+      else
                 {
               QMessageBox::critical(nullptr, QObject::tr("Ajouter un employé "),
                             QObject::tr("Erreur !\n"
@@ -74,11 +106,15 @@ void Dialog::on_pushButton_clicked()
 
 void Dialog::on_supprimer_employe_2_clicked()
 {
-    int res=ui->supprimer_employe->text().toInt();
+    int res=ui->comboBox__supprimer_employe->currentText().toInt();
         bool test=tempemploye.supprimer(res);
         if(test)
         {
-
+            ui->matricule_tache_modifier->setModel(tempemploye.afficher());
+            ui->matricule_tache_ajouter->setModel(tempemploye.afficher());
+            ui->comboBox_supprimer_conge->setModel(tempemploye.afficher());
+            ui->matricule_conge_modifier->setModel(tempemploye.afficher());
+            ui->comboBox__supprimer_employe->setModel(tempemploye.afficher());
             ui->recherche_employe_matricule->setModel(tempemploye.afficher());
             ui->matricule_employe_modifier->setModel(tempemploye.afficher());
             ui->combobox_matricule_conge->setModel(tempemploye.afficher());
@@ -95,17 +131,30 @@ void Dialog::on_supprimer_employe_2_clicked()
 }
 
 void Dialog::on_Ajouter_clicked()
-{   int matricule =ui->combobox_matricule_conge->currentText().toInt();
+{
+    bool test;
+    int matricule =ui->combobox_matricule_conge->currentText().toInt();
     int nbrej =ui->nbrej_conge_ajouter->text().toInt();
     QString dateconge =ui->date_conge_ajouter->text();
     QString typeconge =ui->combobox_conge_type->currentText();
 
+
+    if(matricule>999999|| nbrej==0||dateconge==""||typeconge=="")
+
+
+                 {
+                               QMessageBox::critical(nullptr, QObject::tr("vide"),
+                               QObject::tr("veuillez saisir tous les champs correctement!\n"), QMessageBox::Cancel);
+                               test=false;
+
+                 }
+else{
     Conges C(matricule,nbrej,dateconge,typeconge);
-    bool test= C.ajouter();
+     test= C.ajouter(); }
     if (test)
 
     {
-
+        ui->comboBox_supprimer_conge->setModel(tempemploye.afficher());
         ui->matricule_conge_modifier->setModel(tempemploye.afficher());
         ui->tableView_2->setModel(tempconge.afficher());
         QMessageBox::information(nullptr, QObject::tr("Ajouter un congé "),
@@ -123,10 +172,11 @@ void Dialog::on_Ajouter_clicked()
 
 void Dialog::on_supprimer_conge_clicked()
 {
-    int res=ui->supprimer_conge_2->text().toInt();
+    int res=ui->comboBox_supprimer_conge->currentText().toInt();
         bool test=tempconge.supprimer(res);
         if(test)
         {
+            ui->comboBox_supprimer_conge->setModel(tempemploye.afficher());
 
             ui->matricule_conge_modifier->setModel(tempemploye.afficher());
             ui->tableView_2->setModel(tempconge.afficher());
@@ -143,16 +193,30 @@ void Dialog::on_supprimer_conge_clicked()
 
 void Dialog::on_AJOUTER_TACHE_clicked()
 {
+    bool test;
     int matricule =ui->matricule_tache_ajouter->currentText().toInt();
         int identifiant =ui->identifiant_tache_ajouter->text().toInt();
         QString debut =ui->debut_tache_ajouter->text();
         QString fin =ui->fin_tache_ajouter->text();
         QString libelle=ui->combobox_libelle_tache->currentText();
 
+        if(matricule>999999|| identifiant==0||debut==""||fin==""||libelle=="")
+
+
+                     {
+                                   QMessageBox::critical(nullptr, QObject::tr("vide"),
+                                   QObject::tr("veuillez saisir tous les champs correctement!\n"), QMessageBox::Cancel);
+                                   test=false;
+
+                     }
+else{
         tache t(matricule,identifiant,debut,fin,libelle);
-        bool test= t.ajouter();
+         test= t.ajouter(); }
         if (test)
-        {   ui->matricule_tache_modifier->setModel(tempemploye.afficher());
+        {
+            ui->rechercher_tache_employe->setModel(tempemploye.afficher());
+            ui->comboBox_supprimer_tache->setModel(tempemploye.afficher());
+            ui->matricule_tache_modifier->setModel(tempemploye.afficher());
             ui->tableView_3->setModel(temptache.afficher());
             QMessageBox::information(nullptr, QObject::tr("Ajouter une tache "),
                               QObject::tr("tache ajouté.\n"
@@ -173,11 +237,14 @@ void Dialog::on_AJOUTER_TACHE_clicked()
 
 void Dialog::on_supprimer_tache_clicked()
 {
-    int res=ui->lineEdit_5->text().toInt();
-        bool test=temptache.supprimer(res);
+    int identifiant =ui->comboBox_supprimer_tache->currentText().toInt();
+        bool test=temptache.supprimer(identifiant);
         if(test)
         {
-             ui->matricule_tache_modifier->setModel(tempemploye.afficher());
+            ui->rechercher_tache_employe->setModel(tempemploye.afficher());
+            ui->comboBox_supprimer_tache->setModel(temptache.afficher_id());
+            ui->matricule_tache_modifier->setModel(tempemploye.afficher());
+
             ui->tableView_3->setModel(temptache.afficher());
             QMessageBox::information(nullptr, QObject::tr("Supprimer une tache"),
                         QObject::tr("tache supprimé.\n"
@@ -232,18 +299,12 @@ void Dialog::on_rechercher_employe_clicked()
 
 void Dialog::on_Trier_employe_clicked()
 {
-    ui->tableView->setModel(tempemploye.tri_ref());
+    if(ui->combobox_tri_employe->currentText()=="decroissant"){ui->tableView->setModel(tempemploye.tri_ref());}
+      if(ui->combobox_tri_employe->currentText()=="Ordre alphabetique"){ui->tableView->setModel(tempemploye.tri_nom());}
 
 }
 
-/*void Dialog::on_imprimer_conge_clicked()
-{ QPrinter printer;
-    printer.setPrinterName("desierd printer name");
-    QPrintDialog dialog (&printer,this);
-    if(dialog.exec() == QDialog::Rejected) return;
-    ui->tableView_2->print(&printer);
 
-}*/
 
 void Dialog::on_modifier_conge_clicked()
 {
@@ -273,7 +334,7 @@ void Dialog::on_modifier_conge_clicked()
 void Dialog::on_modifier_tache_clicked()
 {
     int matricule =ui->matricule_tache_modifier->currentText().toInt();
-        int identifiant =ui->identifiant_tache_modifier->text().toInt();
+       int identifiant =ui->identifiant_tache_modifier->text().toInt();
         QString debut =ui->debut_tache_modifier->text();
         QString fin =ui->fin_tache_modifier->text();
         QString libelle =ui->libelle_tache_modifier->currentText();
@@ -282,6 +343,7 @@ void Dialog::on_modifier_tache_clicked()
         bool test = t.modifier(matricule,identifiant,debut,fin,libelle);
         if (test)
         {
+            ui->comboBox_supprimer_tache->setModel(temptache.afficher_id());
             ui->tableView_3->setModel(temptache.afficher());
             QMessageBox::information(nullptr, QObject::tr("modifier une tache "),
             QObject::tr("tache modifier.\n"
@@ -294,4 +356,70 @@ void Dialog::on_modifier_tache_clicked()
                             QObject::tr("Erreur !\n"
                                         "Click Cancel to exit."), QMessageBox::Cancel);
                 }
+}
+
+
+
+
+void Dialog::on_pushButton_2_clicked()
+{
+    QString reff =ui->rechercher_tache_employe->currentText();
+    ui->tableView_3->setModel(temptache.afficher_rech(reff));
+
+}
+
+
+
+
+void Dialog::on_imprimer_clicked()
+{
+    //QDateTime datecreation = date.currentDateTime();
+               //QString afficheDC = "Date de Creation PDF : " + datecreation.toString() ;
+                      QPdfWriter pdf("C:/Users/dell/Desktop/eya/Pdf.pdf");
+                      QPainter painter(&pdf);
+                     int i = 4000;
+                          painter.setPen(Qt::red);
+                          painter.setFont(QFont("Arial Black", 30));
+                          painter.drawText(1100,1200,"Liste des conges ");
+                          painter.setPen(Qt::black);
+                          painter.setFont(QFont("Arial", 50));
+                         // painter.drawText(1100,2000,afficheDC);
+                          painter.drawRect(100,100,7300,2600);
+                          //painter.drawPixmap(QRect(7600,70,2000,2600),QPixmap("C:/Users/RH/Desktop/projecpp/image/logopdf.png"));
+                          painter.drawRect(0,3000,9600,500);
+                          painter.setFont(QFont("Arial", 9));
+                          painter.drawText(200,3300,"MATRICULE");
+                          painter.drawText(1700,3300,"NBREJ");
+                          painter.drawText(3200,3300,"DATECONGE");
+                          painter.drawText(4900,3300,"TYPECONGE");
+
+                          QSqlQuery query;
+                          query.prepare("select * from CONGE");
+                          query.exec();
+                          while (query.next())
+                          {
+                              painter.drawText(200,i,query.value(0).toString());
+                              painter.drawText(1700,i,query.value(1).toString());
+                              painter.drawText(3200,i,query.value(2).toString());
+                              painter.drawText(4900,i,query.value(3).toString());
+
+                             i = i + 500;
+                          }
+                          int reponse = QMessageBox::question(this, "Génerer PDF", "<PDF Enregistré>...Vous Voulez Affichez Le PDF ?", QMessageBox::Yes |  QMessageBox::No);
+                              if (reponse == QMessageBox::Yes)
+                              {
+                                  QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/dell/Desktop/eya/Pdf.pdf"));
+                                  painter.end();
+                              }
+                              if (reponse == QMessageBox::No)
+                              {
+                                   painter.end();
+                              }
+}
+
+
+
+void Dialog::on_recherche_dynamique_textChanged(const QString &arg1)
+{
+    ui->tableView_3->setModel(temptache.rechercheDynamic(arg1));
 }

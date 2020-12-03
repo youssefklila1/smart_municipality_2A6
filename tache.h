@@ -21,7 +21,12 @@ public:
     bool modifier(int,int,QString,QString,QString);
     bool ajouter();
     QSqlQueryModel * afficher();
+    QSqlQueryModel * afficher_id();
     bool supprimer(int);
+
+    QSqlQueryModel * rechercheDynamic(QString);
+    QSqlQueryModel * afficher_rech(QString reff);
+
 };
 
 #endif // TACHE_H

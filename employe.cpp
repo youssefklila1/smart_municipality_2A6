@@ -95,6 +95,7 @@ return model;
 }
 
 
+
 QSqlQueryModel * employe::tri_ref()//tri decroissant
 {QSqlQueryModel * model= new QSqlQueryModel();
 
@@ -112,6 +113,20 @@ model->setHeaderData(7, Qt::Horizontal, QObject::tr("ANNEESEXP"));
 
 
 
+QSqlQueryModel * employe::tri_nom()
+{QSqlQueryModel * model= new QSqlQueryModel();
+
+model->setQuery("select * from EMPLOYEN order by NOM asc");
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("MATRICULE"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("EMAIL"));
+model->setHeaderData(4, Qt::Horizontal, QObject::tr("SITUATIONFAMILIALE"));
+model->setHeaderData(5, Qt::Horizontal, QObject::tr("FONCTION"));
+model->setHeaderData(6, Qt::Horizontal, QObject::tr("DATENAISS"));
+model->setHeaderData(7, Qt::Horizontal, QObject::tr("ANNEESEXP"));
+    return model;
+}
 
 
 

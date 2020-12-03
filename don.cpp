@@ -12,16 +12,17 @@ Don::Don(int matricule ,int valeur ,QString source ,QString autre ,QString type)
     this->source=source;
     this->autre=autre;
 }
-
+// ajouter
 bool Don::ajouter()
    {
    QSqlQuery query;
+
    QString mat= QString::number(matricule);
    QString val= QString::number(valeur);
 
+//preparation de la requet sql
 
-
-   query.prepare("INSERT INTO MYRIAM.DON (ID, MATRICULE, SOURCE, TYPE, VALEUR, AUTRE) VALUES (:MATRICULE,:MATRICULE, :SOURCE,:TYPE,:VALEUR,:AUTRE )");
+   query.prepare("INSERT INTO MYRIAM.DON (ID, MATRICULE, SOURCE, TYPE, VALEUR, AUTRE) VALUES (:MATRICULE,:MATRICULE, :SOURCE,:TYPE,:VALEUR,:AUTRE ) ");
 
    query.bindValue(":MATRICULE",mat);
    query.bindValue(":SOURCE",source);
@@ -29,11 +30,16 @@ bool Don::ajouter()
    query.bindValue(":VALEUR",val);
    query.bindValue(":AUTRE",autre);
 
+//execution de la requet sql
    return    query.exec();
    }
+//afficher
+QSqlQueryModel * Don::afficher(){
+  QSqlQueryModel *model = new QSqlQueryModel;
 
-QSqlQueryModel * Don::afficher(){ QSqlQueryModel *model = new QSqlQueryModel;
+  //preparation de la requet sql
   model->setQuery("SELECT * FROM MYRIAM.DON");
+
   model->setHeaderData(0, Qt::Horizontal, QObject::tr("matricule"));
   model->setHeaderData(1, Qt::Horizontal, QObject::tr("source"));
   model->setHeaderData(2, Qt::Horizontal, QObject::tr("type"));
@@ -43,15 +49,17 @@ QSqlQueryModel * Don::afficher(){ QSqlQueryModel *model = new QSqlQueryModel;
 
   return  model;
   }
+//supprimer
 bool Don::supprimer(int id)
 {
 QSqlQuery query;
-QString res=QString::number(id);
+QString idString=QString::number(id);
 
 query.prepare("Delete from MYRIAM.DON  where ID = :id ");
-query.bindValue(":id", res);
+query.bindValue(":id", idString);
 return    query.exec();
 }
+//modifier
 bool Don::modifier(int matricule ,int valeur ,QString source ,QString autre ,QString type){
     QSqlQuery query;
     QString mt=QString::number(matricule);
@@ -65,7 +73,7 @@ bool Don::modifier(int matricule ,int valeur ,QString source ,QString autre ,QSt
   query.bindValue(":autre",autre);
    return query.exec();
 }
-
+//organiser selon matricule
 QSqlQueryModel * Don::afficherMatricule(){ QSqlQueryModel *model = new QSqlQueryModel;
   model->setQuery("SELECT * FROM MYRIAM.DON ORDER BY matricule");
   model->setHeaderData(0, Qt::Horizontal, QObject::tr("matricule"));
@@ -77,6 +85,7 @@ QSqlQueryModel * Don::afficherMatricule(){ QSqlQueryModel *model = new QSqlQuery
 
   return  model;
   }
+//organiser selon type
 QSqlQueryModel * Don::afficherType(){ QSqlQueryModel *model = new QSqlQueryModel;
   model->setQuery("SELECT * FROM MYRIAM.DON ORDER BY type");
   model->setHeaderData(0, Qt::Horizontal, QObject::tr("matricule"));

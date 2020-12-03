@@ -4,34 +4,38 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include<QMessageBox>
+
+
+//constructor
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
+    //-> 1
     ui->setupUi(this);
-    //afficher don
+    //update table don
     ui->tableDon->setModel(tmp1.afficher());
-    //afficher famille
+    //update table famille
     ui->table_famille->setModel(tmp2.afficher());
 
+
 Dialog::afficherLesDons();
+
 Dialog::afficherStatistique();
 }
 
+//destructeur
 Dialog::~Dialog()
 {
     delete ui;
 }
-// afficher les donnees sur la table don
-void Dialog::on_afficher_table_don_clicked()
-{    ui->tableDon->setModel(tmp1.afficher());
 
 
-}
 
 
-//--------------------------------------- CRUD DON ----------------------------------------------------//
+//------------------------------------------ CRUD DON ----------------------------------------------------//
 //ajouter don
+
 void Dialog::on_pushButton_2_clicked()
 {QMessageBox msg;
 
@@ -45,14 +49,15 @@ void Dialog::on_pushButton_2_clicked()
 
 if(ui->argent->isChecked()){
     type="argent";
-    autre="N/A";
+    autre="-";
 }else if(ui->autre->isChecked()) {
     type="autre";
     autre=ui->autre_ajouter_don->currentText();
     valeur=0;
 }
-
+//don constructor
     Don d(matricule ,valeur ,source ,autre ,type);
+
 if(d.ajouter())
 {
 ui->tableDon->setModel(tmp1.afficher());
@@ -66,7 +71,8 @@ msg.exec();
 
 }
 //supprimer don
-void Dialog::on_pushButton_5_clicked()
+
+void Dialog::on_supprimer_don_clicked()
 {QMessageBox msg;
     Don d;
     int matricule =ui->matricule_supprimer_don->text().toInt();
@@ -113,13 +119,11 @@ msg.exec();
 }
 
 }
-//----------------CRUD FAMILLE--------------------------------------------//
-//remplir combo box des dons
+//-----------------------------------CRUD FAMILLE--------------------------------------------//
+//remplir combo box des dons dans famille
+//(..
 void Dialog::afficherLesDons(){
 
-ui->id_don_modifier_famille->clear();
-
-ui->id_don_ajouter_famille->clear();
 
     QSqlQuery query;
             query.prepare("SELECT ID FROM MYRIAM.DON ");
@@ -132,7 +136,7 @@ ui->id_don_ajouter_famille->clear();
             }
 }
 
-
+//..)
 
 
 
@@ -216,7 +220,7 @@ msg.exec();
 }
 
 }
-//---------------------------les metiers--------------------------------//
+//----------------------------------------------les metiers--------------------------------//
 
 //trier don
 void Dialog::on_afficher_don_trier_clicked()
@@ -249,64 +253,12 @@ void Dialog::on_afficher_famille_clicked()
     }
 
 }
-//recherche par nom
+//recherche par nom dynamique
 void Dialog::on_lineEdit_textChanged(const QString &arg1)
-{
+{//update table famille selon la recherche
     ui->table_famille->setModel(tmp2.rechercheDynamic(arg1));
 }
 
-void Dialog::on_pushButton_clicked()
-{
-    QSqlQuery query;
-
-    //nombre de dons
-            QString nb_don="";
-            query.prepare("SELECT COUNT(*) FROM MYRIAM.DON");
-            query.exec();
-            while(query.next()){
-            nb_don= query.value(0).toString();}
-
-     //nombre de famille
-
-            QString nb_famille="";
-            query.prepare("SELECT COUNT(*) FROM MYRIAM.FAMILLES");
-            query.exec();
-            while(query.next()){
-            nb_famille= query.value(0).toString();}
-
-
-
-        QBarSet *set0 = new QBarSet("Jane");
-
-
-           *set0 << nb_don.toInt()  << nb_famille.toInt()   ;
-        QBarSeries *series = new QBarSeries();
-         series->append(set0);
-         QChart *chart = new QChart();
-             chart->addSeries(series);
-             chart->setTitle("statistique dons");
-             chart->setAnimationOptions(QChart::SeriesAnimations);
-
-             QStringList categories;
-                categories << "nombre don" <<  "nombre famille" ;
-                QBarCategoryAxis *axisX = new QBarCategoryAxis();
-                axisX->append(categories);
-                chart->addAxis(axisX, Qt::AlignBottom);
-                series->attachAxis(axisX);
-
-                /*QValueAxis *axisY = new QValueAxis();
-                axisY->setRange(0,qt_besoin.toInt()+10);
-                chart->addAxis(axisY, Qt::AlignLeft);
-                series->attachAxis(axisY);*/
-
-                chart->legend()->setVisible(true);
-                    chart->legend()->setAlignment(Qt::AlignBottom);
-
-                    QChartView *chartView = new QChartView(chart);
-                    chartView->setRenderHint(QPainter::Antialiasing);
-                    chartView->setParent(ui->horizontalFrame);
-
-}
 //statistique
 void Dialog::afficherStatistique(){
 
@@ -348,10 +300,7 @@ void Dialog::afficherStatistique(){
                 chart->addAxis(axisX, Qt::AlignBottom);
                 series->attachAxis(axisX);
 
-                /*QValueAxis *axisY = new QValueAxis();
-                axisY->setRange(0,qt_besoin.toInt()+10);
-                chart->addAxis(axisY, Qt::AlignLeft);
-                series->attachAxis(axisY);*/
+
 
                 chart->legend()->setVisible(true);
                     chart->legend()->setAlignment(Qt::AlignBottom);
@@ -360,5 +309,7 @@ void Dialog::afficherStatistique(){
                     chartView->setRenderHint(QPainter::Antialiasing);
                     chartView->setParent(ui->horizontalFrame);
 }
+
+
 
 

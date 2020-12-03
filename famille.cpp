@@ -74,7 +74,7 @@ bool famille::modifier(int matricule ,int nbr_membres,int don ,QString nom ,QStr
 }
 
 
-//affichage trie famille
+//organiser selon besoin
 QSqlQueryModel * famille::afficherBesoin(){ QSqlQueryModel *model = new QSqlQueryModel;
   model->setQuery("SELECT * FROM MYRIAM.FAMILLES  ORDER BY BESOIN ");
 
@@ -89,6 +89,7 @@ QSqlQueryModel * famille::afficherBesoin(){ QSqlQueryModel *model = new QSqlQuer
   return  model;
   }
 
+//organiser selon nombre de membres
 QSqlQueryModel * famille::afficherNBR(){
   QSqlQueryModel *model = new QSqlQueryModel;
   model->setQuery("SELECT * FROM MYRIAM.FAMILLES ORDER BY NBR_MEMBRES");
@@ -103,10 +104,11 @@ QSqlQueryModel * famille::afficherNBR(){
 
   return  model;
   }
-
+//recherche dynamic selon nom
 QSqlQueryModel * famille::rechercheDynamic(QString SearchName){
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery("SELECT * FROM MYRIAM.FAMILLES WHERE nom LIKE '"+SearchName+"%'");
+
 
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("matricule"));

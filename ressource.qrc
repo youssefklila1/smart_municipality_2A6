@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/60745.png</file>
+        <file>img/21200220.jpg</file>
+        <file>img/AP.png</file>
+        <file>img/app.png</file>
+        <file>img/back.jpg</file>
+        <file>img/backlog.jpg</file>
+        <file>img/dddddddddd.jpg</file>
+        <file>img/eeeeeeee.png</file>
+        <file>img/halla4.jpg</file>
+        <file>img/imf.jpg</file>
+        <file>img/OP.jpg</file>
+        <file>img/PP.png</file>
+        <file>img/SmartCity.original.png</file>
+        <file>img/Untitled-1.jpg</file>
+        <file>img/Untitled-2.jpg</file>
+        <file>img/Untitled-3.jpg</file>
+        <file>img/B.png</file>
+        <file>img/unnamed.png</file>
+        <file>img/check.jpg</file>
+        <file>img/sort.png</file>
+    </qresource>
+</RCC>

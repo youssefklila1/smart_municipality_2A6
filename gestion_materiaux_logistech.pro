@@ -1,5 +1,6 @@
 QT       += core gui
 QT += core gui sql
+QT += core gui charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,7 +17,8 @@ SOURCES += \
     mainwindow.cpp \
     materiauxmanq.cpp \
     materiauxposs.cpp \
-    matmaint.cpp
+    matmaint.cpp \
+    notification.cpp
 
 HEADERS += \
     connection.h \
@@ -24,7 +26,8 @@ HEADERS += \
     mainwindow.h \
     materiauxmanq.h \
     materiauxposs.h \
-    matmaint.h
+    matmaint.h \
+    notification.h
 
 FORMS += \
     dialog.ui \
@@ -34,3 +37,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    ressource.qrc

@@ -3,9 +3,25 @@
 #include "connection.h"
 #include <QMessageBox>
 #include <QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QLegend>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+
+QT_CHARTS_USE_NAMESPACE
+
 
 int main(int argc, char *argv[])
 {
+
+
+
 
     QApplication a(argc, argv);
     Connection c ;

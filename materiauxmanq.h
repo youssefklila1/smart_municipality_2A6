@@ -22,7 +22,14 @@ public:
 
     bool ajouter();
     QSqlQueryModel * afficher();
+    QSqlQueryModel * afficher_rech(QString reff);
+    QSqlQueryModel * tri_ref();
+    QSqlQueryModel * tri_nom();
     bool supprimer(int);
+    bool modifier(int,int,QString,QString);
+    QSqlQueryModel * afficher_nom();
+
+
 
 };
 

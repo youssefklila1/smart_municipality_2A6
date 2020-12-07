@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>765</width>
+    <width>971</width>
     <height>600</height>
    </rect>
   </property>
@@ -17,10 +17,10 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-30</x>
       <y>100</y>
-      <width>761</width>
-      <height>461</height>
+      <width>871</width>
+      <height>441</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -30,8 +30,8 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>-150</y>
+        <x>110</x>
+        <y>-110</y>
         <width>761</width>
         <height>591</height>
        </rect>
@@ -40,7 +40,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Downloads/111.jpg</pixmap>
+       <pixmap resource="ressources.qrc">:/youssef/Untitled-2.jpg</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -49,11 +49,18 @@
      <widget class="QLineEdit" name="utilisateur">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>130</y>
+        <x>580</x>
+        <y>150</y>
         <width>261</width>
-        <height>41</height>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">width: 200%;
+
+  margin: 10px 0;
+
+  border-radius: 10px;</string>
       </property>
       <property name="text">
        <string/>
@@ -65,11 +72,18 @@
      <widget class="QLineEdit" name="motdepasse">
       <property name="geometry">
        <rect>
-        <x>242</x>
-        <y>190</y>
+        <x>580</x>
+        <y>200</y>
         <width>261</width>
-        <height>41</height>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">width: 200%;
+
+  margin: 10px 0;
+
+  border-radius: 10px;</string>
       </property>
       <property name="text">
        <string/>
@@ -81,11 +95,21 @@
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>410</x>
-        <y>260</y>
+        <x>650</x>
+        <y>280</y>
         <width>101</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#pushButton:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}
+</string>
       </property>
       <property name="text">
        <string>Se connecter</string>
@@ -94,8 +118,8 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>0</y>
+        <x>580</x>
+        <y>50</y>
         <width>241</width>
         <height>101</height>
        </rect>
@@ -115,9 +139,9 @@
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>110</x>
         <y>0</y>
-        <width>761</width>
+        <width>791</width>
         <height>441</height>
        </rect>
       </property>
@@ -125,7 +149,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Downloads/back.png</pixmap>
+       <pixmap resource="ressources.qrc">:/youssef/Untitled-2.jpg</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -134,11 +158,19 @@
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>20</y>
+        <x>680</x>
+        <y>40</y>
         <width>131</width>
-        <height>51</height>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
       </property>
       <property name="text">
        <string>Employés</string>
@@ -147,11 +179,19 @@
      <widget class="QPushButton" name="pushButton_3">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>680</x>
         <y>80</y>
         <width>131</width>
-        <height>51</height>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
       </property>
       <property name="text">
        <string>Dons</string>
@@ -160,11 +200,19 @@
      <widget class="QPushButton" name="pushButton_4">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>150</y>
+        <x>680</x>
+        <y>120</y>
         <width>131</width>
-        <height>51</height>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
       </property>
       <property name="text">
        <string>Matériaux</string>
@@ -173,11 +221,19 @@
      <widget class="QPushButton" name="pushButton_5">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>210</y>
+        <x>680</x>
+        <y>160</y>
         <width>131</width>
-        <height>51</height>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
       </property>
       <property name="text">
        <string>Evnements</string>
@@ -186,11 +242,19 @@
      <widget class="QPushButton" name="pushButton_6">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>270</y>
+        <x>680</x>
+        <y>200</y>
         <width>131</width>
-        <height>51</height>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
       </property>
       <property name="text">
        <string>Chantiers</string>
@@ -199,11 +263,19 @@
      <widget class="QPushButton" name="pushButton_7">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>340</y>
+        <x>680</x>
+        <y>240</y>
         <width>131</width>
-        <height>51</height>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
       </property>
       <property name="text">
        <string>Fournisseurs</string>
@@ -271,7 +343,7 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>80</x>
       <y>0</y>
       <width>761</width>
       <height>101</height>
@@ -293,13 +365,15 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>765</width>
+     <width>971</width>
      <height>26</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="ressources.qrc"/>
+ </resources>
  <connections/>
 </ui>

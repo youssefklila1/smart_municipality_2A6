@@ -259,7 +259,7 @@ void Dialog::on_lineEdit_textChanged(const QString &arg1)
     ui->table_famille->setModel(tmp2.rechercheDynamic(arg1));
 }
 
-//statistique
+//statistique!!!!!!!!!!!!!!!!!
 void Dialog::afficherStatistique(){
 
 

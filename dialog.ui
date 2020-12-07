@@ -138,7 +138,7 @@ QLineEdit {
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tab_6">
       <attribute name="icon">
@@ -275,14 +275,20 @@ text-align:center;</string>
        <property name="geometry">
         <rect>
          <x>530</x>
-         <y>310</y>
+         <y>300</y>
          <width>121</width>
-         <height>31</height>
+         <height>41</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">  background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                       stop: 0 #dadbde, stop: 1 #f6f7fa);</string>
+        <string notr="true">#pushButton_2{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#pushButton_2:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}
+</string>
        </property>
        <property name="text">
         <string>Ajouter </string>
@@ -479,6 +485,16 @@ text-align:center;</string>
          <height>28</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">#afficher_don_trier{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#afficher_don_trier:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}
+</string>
+       </property>
        <property name="text">
         <string>Afficher</string>
        </property>
@@ -592,6 +608,17 @@ text-align:center;</string>
          <width>93</width>
          <height>28</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#modifier_don{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#modifier_don:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}
+
+</string>
        </property>
        <property name="text">
         <string>Modifier</string>
@@ -799,6 +826,16 @@ text-align:center;</string>
          <height>28</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">#supprimer_don{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#supprimer_don:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}
+</string>
+       </property>
        <property name="text">
         <string>Supprimer</string>
        </property>
@@ -867,7 +904,7 @@ text-align:center;</string>
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tab_7">
       <attribute name="title">
@@ -1101,6 +1138,16 @@ text-align:center;</string>
          <height>28</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">#ajouter_famille{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#ajouter_famille:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}
+</string>
+       </property>
        <property name="text">
         <string>Ajouter </string>
        </property>
@@ -1168,6 +1215,16 @@ text-align:center;</string>
          <width>93</width>
          <height>28</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#afficher_famille{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#afficher_famille:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}
+</string>
        </property>
        <property name="text">
         <string>Afficher</string>
@@ -1505,6 +1562,16 @@ text-align:center;</string>
          <height>28</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">#modifier_famille{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#modifier_famille:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}
+</string>
+       </property>
        <property name="text">
         <string>Modifier</string>
        </property>
@@ -1559,6 +1626,16 @@ text-align:center;</string>
          <width>93</width>
          <height>28</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#supprimer_famille_2{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#supprimer_famille_2:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}
+</string>
        </property>
        <property name="text">
         <string>Supprimer</string>

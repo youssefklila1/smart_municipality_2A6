@@ -28,6 +28,8 @@ public:
     QSqlQueryModel * afficher_rech(QString reff);
     QSqlQueryModel * afficher_nom();
     QSqlQueryModel * rechercheDynamic(QString);
+    bool verif_nom(QString);
+    void imprimer();
 
     bool verif_id(int);
 

@@ -1,7 +1,7 @@
 #ifndef DIALOG_H
 #define DIALOG_H
 //test
-#include "materiauxPoss.h"
+#include "materiauxposs.h"
 #include "materiauxmanq.h"
 #include "matmaint.h"
 #include <QDialog>

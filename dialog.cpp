@@ -1,6 +1,6 @@
 #include "dialog.h"
 #include "ui_dialog.h"
-#include "materiauxPoss.h"
+#include "materiauxposs.h"
 #include "materiauxmanq.h"
 #include "matmaint.h"
 #include <QMessageBox>
@@ -66,7 +66,7 @@ void Dialog::on_ajouterposs_clicked()
     if(ui->ajouterEtatMateriauxPoss1->isChecked()){ etat =ui->ajouterEtatMateriauxPoss1->text();}
     if(ui->ajouteretatMateriauxposs0->isChecked()){ etat =ui->ajouteretatMateriauxposs0->text();}
 
-    if(nom==""|| etat==""||referance==0||referance>99999999||nom.length()>10)
+    if(nom==""|| etat==""||referance==0||referance>99999999||nom.length()>10||tempmatposs.verif_nom(nom)==false)
 
 
             {
@@ -114,7 +114,7 @@ void Dialog::on_Modifier_materiel_possession_clicked()
     if(ui->mat_poss_etat_b_mod->isChecked()){ etat =ui->mat_poss_etat_b_mod->text();}
     if(ui->mat_poss_m__mod->isChecked()){ etat =ui->mat_poss_m__mod->text();}
     Materiauxposs m ;
-    if(nom==""|| etat==""||referance==0)
+    if(nom==""|| etat==""||referance==0||tempmatposs.verif_nom(nom)==false)
 
 
             {
@@ -209,6 +209,26 @@ void Dialog::on_supprimer_mat_poss_tab_clicked()
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 }
 
+void Dialog::on_imprimer_mat_poss_clicked()
+{
+    int reponse = QMessageBox::question(this, "Génerer PDF", "<PDF Enregistré>...Vous Voulez Affichez Le PDF ?", QMessageBox::Yes |  QMessageBox::No);
+    if (reponse == QMessageBox::Yes)
+    {
+        tempmatposs.imprimer();
+    }
+    if (reponse == QMessageBox::No)
+    {
+        QMessageBox::critical(nullptr, QObject::tr("imprimer annuler"),
+                    QObject::tr("imprimer annuler.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+
+}
+
+void Dialog::on_lineEdit_textChanged(const QString &arg1)
+{
+    ui->tableView->setModel(tempmatposs.rechercheDynamic(arg1));
+}
 
 //===================================================materiaux_manquant=============================================
 
@@ -223,7 +243,7 @@ void Dialog::on_ajoutermateriauxmanq_clicked()
  QString nom =ui->nommanq->text();
  if(ui->dispo_oui->isChecked()){ dispo =ui->dispo_oui->text();}
  if(ui->dispo_non->isChecked()){ dispo =ui->dispo_non->text();}
- if(prix==0|| nom==""||referance==0||dispo=="")
+ if(prix==0|| nom==""||referance==0||dispo==""||tempmatposs.verif_nom(nom)==false)
 
 
          {
@@ -268,7 +288,7 @@ void Dialog::on_modifier_materiel_manquant_clicked()
     if(ui->dispo_oui_materiel_manquant_modifier->isChecked()){ dispo =ui->dispo_oui_materiel_manquant_modifier->text();}
     if(ui->ispo_non_materiel_manquant_modifier->isChecked()){ dispo =ui->ispo_non_materiel_manquant_modifier->text();}
 
-    if(prix==0|| nom==""||referance==0||dispo=="")
+    if(prix==0|| nom==""||referance==0||dispo==""||tempmatposs.verif_nom(nom)==false)
 
 
             {
@@ -380,7 +400,7 @@ void Dialog::on_ajouter_mat_maintenace_clicked()
     QString nom =ui->combo_nom_mat_maint->currentText();
     QString region =ui->region_mat_maint_a_ajouter->text();
 
-    if(date==""|| nom==""||referance==0||region=="")
+    if(date==""|| nom==""||referance==0||region==""||tempmatposs.verif_nom(nom)==false||tempmatposs.verif_nom(region)==false)
 
 
             {
@@ -447,7 +467,7 @@ void Dialog::on_modifier_materiaux_maintenance_clicked()
     QString date=ui->dure_materiaux_maintance_modifier->text();
     QString nom=ui->nom_materiel_manquant_modfier->text();
     QString region=ui->region_mateiraux_maintance_modifier->text();
-    if(date==""|| nom==""||referance==0||region=="")
+    if(date==""|| nom==""||referance==0||region==""||tempmatposs.verif_nom(nom)==false||tempmatposs.verif_nom(region)==false)
 
 
             {
@@ -496,23 +516,7 @@ void Dialog::on_comboBox_tri_mat_maint_activated(int index)
 
 void Dialog::on_supprimer_mat_maint_tab_clicked()
 {
-    int ref=ui->tableView_2->currentIndex().data().toInt();
-    bool test=tempmatmaint.supprimer(ref);
-    if(test)
-    {
-        ui->tableView_2->setModel(tempmatmaint.afficher());
-        ui->referance_mat_maint_supprimer_combobox_1->setModel(tempmatmaint.afficher());
-        ui->comboBox_rechercher_mat_maint->setModel(tempmatmaint.afficher());
-        ui->referance_mat_maint_modifier->setModel(tempmatmaint.afficher());
-                    QMessageBox::information(nullptr, QObject::tr("Supprimer un materiel"),
-                    QObject::tr("materiel supprimé.\n"
-                                "Click Cancel to exit."), QMessageBox::Cancel);
-
-    }
-    else
-                    QMessageBox::critical(nullptr, QObject::tr("Supprimer un materiel"),
-                    QObject::tr("Erreur !.\n"
-                                "Click Cancel to exit."), QMessageBox::Cancel);
+  
 }
 
 
@@ -528,62 +532,3 @@ void Dialog::on_comboBox_rechercher_mat_maint_activated(int index)
 
 
 
-
-
-
-
-
-
-
-
-void Dialog::on_imprimer_mat_poss_clicked()
-{
-
-        //QDateTime datecreation = date.currentDateTime();
-         //QString afficheDC = "Date de Creation PDF : " + datecreation.toString() ;
-                          QPdfWriter pdf("C:/Users/asus/Desktop/imprimer/Pdf.pdf");
-                          QPainter painter(&pdf);
-                         int i = 4000;
-                              painter.setPen(Qt::black);
-                              painter.setFont(QFont("Playbill", 30));
-                              painter.drawText(1100,1200,"Liste des materiaux  ");
-                              painter.setPen(Qt::black);
-                              painter.setFont(QFont("Arial", 50));
-                             // painter.drawText(1100,2000,afficheDC);
-                              painter.drawRect(100,100,7300,2600);
-                              //painter.drawPixmap(QRect(7600,70,2000,2600),QPixmap("C:/Users/RH/Desktop/projecpp/image/logopdf.png"));
-                              painter.drawRect(0,3000,9600,500);
-                              painter.setFont(QFont("Arial", 9));
-                              painter.drawText(200,3300,"REFERANCE");
-                              painter.drawText(1700,3300,"NOM");
-                              painter.drawText(3200,3300,"ETAT");
-
-                              QSqlQuery query;
-                              query.prepare("select * from MATERIAUX_POSS");
-                              query.exec();
-                              while (query.next())
-                              {
-                                  painter.drawText(200,i,query.value(0).toString());
-                                  painter.drawText(1700,i,query.value(1).toString());
-                                  painter.drawText(3200,i,query.value(2).toString());
-
-
-                                 i = i + 500;
-                              }
-                              int reponse = QMessageBox::question(this, "Génerer PDF", "<PDF Enregistré>...Vous Voulez Affichez Le PDF ?", QMessageBox::Yes |  QMessageBox::No);
-                                  if (reponse == QMessageBox::Yes)
-                                  {
-                                      QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/asus/Desktop/imprimer/Pdf.pdf"));
-                                      painter.end();
-                                  }
-                                  if (reponse == QMessageBox::No)
-                                  {
-                                       painter.end();
-                                  }
-
-}
-
-void Dialog::on_lineEdit_textChanged(const QString &arg1)
-{
-    ui->tableView->setModel(tempmatposs.rechercheDynamic(arg1));
-}

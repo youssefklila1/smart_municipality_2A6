@@ -146,6 +146,14 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+      </property>
       <property name="text">
        <string>Employées</string>
       </property>
@@ -158,6 +166,14 @@
         <width>191</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
       </property>
       <property name="text">
        <string>Dons</string>
@@ -172,6 +188,14 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+      </property>
       <property name="text">
        <string>Chantiers</string>
       </property>
@@ -184,6 +208,14 @@
         <width>191</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
       </property>
       <property name="text">
        <string>Fournisseurs</string>
@@ -198,6 +230,14 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+      </property>
       <property name="text">
        <string>Matériaux</string>
       </property>
@@ -210,6 +250,14 @@
         <width>191</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
       </property>
       <property name="text">
        <string>Evenement</string>

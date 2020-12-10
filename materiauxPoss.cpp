@@ -3,7 +3,19 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include "dialog.h"
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+#include <QMessageBox>
 #include <QComboBox>
+#include <QPixmap>
+#include<QPdfWriter>
+#include<QPainter>
+#include<QDesktopServices>
+QT_CHARTS_USE_NAMESPACE
+
 
 Materiauxposs::Materiauxposs(int referance ,QString Nom, QString etat)
 {
@@ -99,7 +111,7 @@ QSqlQueryModel * Materiauxposs::rechercheDynamic(QString SearchName)
 {
 
     QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT * from MATERIAUX_POSS where NOM LIKE '"+SearchName+"%'");
+    model->setQuery("SELECT * from MATERIAUX_POSS where NOM LIKE '"+SearchName+"%'OR ETAT like '"+SearchName+"%'");
 
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("REFERANCE"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM "));
@@ -109,6 +121,61 @@ QSqlQueryModel * Materiauxposs::rechercheDynamic(QString SearchName)
 }
 
 
+bool  Materiauxposs::verif_nom(QString nom)
+{
+    bool test=true;
+    int i;
+    if(nom.length()>20)
+    {
+       test=false;
+       return  test;
+    }
+    else
+    {
+        for(i=0;i<nom.length();i++)
+        {
+            if(!(((nom[i]>='A')&&(nom[i]<='Z'))||((nom[i]>='a')&&(nom[i]<='z'))))
+            {
+                test=false;
+                return  test;
+
+            }
+        }
+    }
+    return  test;
+}
+
+void Materiauxposs::imprimer()
+{
+    QPdfWriter pdf("C:/Users/asus/Desktop/imprimer/Pdf.pdf");
+    QPainter painter(&pdf);
+   int i = 4000;
+        painter.setPen(Qt::black);
+        painter.setFont(QFont("Playbill", 30));
+        painter.drawText(1100,1200,"Liste des materiaux  ");
+        painter.setPen(Qt::black);
+        painter.setFont(QFont("Arial", 50));
+        painter.drawRect(100,100,7300,2600);
+        painter.drawRect(0,3000,9600,500);
+        painter.setFont(QFont("Arial", 9));
+
+        painter.drawText(200,3300,"REFERANCE");
+        painter.drawText(1700,3300,"NOM");
+        painter.drawText(3200,3300,"ETAT");
+
+        QSqlQuery query;
+        query.prepare("select * from MATERIAUX_POSS");
+        query.exec();
+        while (query.next())
+        {
+            painter.drawText(200,i,query.value(0).toString());
+            painter.drawText(1700,i,query.value(1).toString());
+            painter.drawText(3200,i,query.value(2).toString());
+           i = i + 500;
+        }
+
+                QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/asus/Desktop/imprimer/Pdf.pdf"));
+                painter.end();
 
 
-
+}

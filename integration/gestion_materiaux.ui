@@ -1,0 +1,2547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>gestion_materiaux</class>
+ <widget class="QDialog" name="gestion_materiaux">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>786</width>
+    <height>442</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTabWidget" name="ges">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>751</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Microsoft Tai Le</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTabWidget::pane { /* The tab widget frame */
+	background-image: url(:/pic/pic.jpeg);
+	background-image: url(:/pic/pic.jpeg);
+	background-image: url(:/pic/pic.jpeg);
+
+border-top: 5px solid #535353;
+}
+QTabWidget::tab-bar {
+left: 0px; /* move to the right by 5px */
+}
+/* Style the tab using the tab sub-control. Note that it reads QTabBar not QTabWidget */
+QTabBar::tab {
+background: #dcdcdc;
+border: 3px solid #535353;
+border-bottom-color: #535353; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 180px;
+padding: 8px;
+color: #6a1616;
+font-size:15px;
+font-family:Arial, Helvetica, sans-serif;
+}
+QTabBar::tab:selected, QTabBar::tab:hover {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #c3a1a1, stop: 0.4 #194a99, stop: 0.5 #335fff, stop: 1.0 #5d9eff);
+}
+QTabBar::tab:selected {
+border-color: #9B9B9B;
+border-bottom-color: #535353; /* same as pane color */
+color: #dcdcdc;
+font-size:15px;
+font-family:Arial , Helvetica, sans-serif;
+}
+QTabBar::tab:!selected {
+margin-top: 2px; /* make non-selected tabs look smaller */
+}
+QLineEdit {
+  width: 200%;
+  
+  margin: 10px 0;
+  display: inline-block;
+  border: 10px solid #ccc;
+  border-radius: 10px;
+ 
+}</string>
+   </property>
+   <property name="tabShape">
+    <enum>QTabWidget::Rounded</enum>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>materiaux en possessions</string>
+    </attribute>
+    <widget class="QTabWidget" name="tabWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>30</y>
+       <width>661</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei UI</family>
+      </font>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Afficher &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTabWidget::pane { /* The tab widget frame */
+	background-image: url(:/pic/pic.jpeg);
+	background-image: url(:/pic/pic.jpeg);
+	background-image: url(:/pic/pic.jpeg);
+
+border-top: 5px solid #535353;
+}
+QTabWidget::tab-bar {
+left: 0px; /* move to the right by 5px */
+}
+/* Style the tab using the tab sub-control. Note that it reads QTabBar not QTabWidget */
+QTabBar::tab {
+background: #dcdcdc;
+border: 2px solid #535353;
+border-bottom-color: #535353; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 120px;
+padding: 8px;
+color: #6a1616;
+font-size:15px;
+font-family:Arial, Helvetica, sans-serif;
+}
+QTabBar::tab:selected, QTabBar::tab:hover {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #c3a1a1, stop: 0.4 #194a99, stop: 0.5 #335fff, stop: 1.0 #5d9eff);
+}
+QTabBar::tab:selected {
+border-color: #9B9B9B;
+border-bottom-color: #535353; /* same as pane color */
+color: #dcdcdc;
+font-size:15px;
+font-family:Arial , Helvetica, sans-serif;
+}
+QTabBar::tab:!selected {
+margin-top: 2px; /* make non-selected tabs look smaller */
+}
+QLineEdit {
+  width: 100%;
+  padding: 40px 40px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}</string>
+     </property>
+     <property name="tabPosition">
+      <enum>QTabWidget::North</enum>
+     </property>
+     <property name="tabShape">
+      <enum>QTabWidget::Rounded</enum>
+     </property>
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <property name="elideMode">
+      <enum>Qt::ElideLeft</enum>
+     </property>
+     <property name="documentMode">
+      <bool>false</bool>
+     </property>
+     <property name="tabsClosable">
+      <bool>false</bool>
+     </property>
+     <property name="movable">
+      <bool>false</bool>
+     </property>
+     <property name="tabBarAutoHide">
+      <bool>false</bool>
+     </property>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>ajouter</string>
+      </attribute>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>30</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Referance:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>80</y>
+         <width>111</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Nom du materiel :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>130</y>
+         <width>51</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Etat :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="referancePoss">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>20</y>
+         <width>141</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="nomPoss">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>70</y>
+         <width>141</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="ajouterEtatMateriauxPoss1">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>130</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>bonne etat</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="ajouteretatMateriauxposs0">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>130</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>mauvaise etat </string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ajouterposs">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>230</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+
+#ajouterposs{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#ajouterposs:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+       </property>
+       <property name="text">
+        <string>Ajouter</string>
+       </property>
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/images/img/app.png</normaloff>:/images/img/app.png</iconset>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressources.qrc">:/images/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_103">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>-8</y>
+         <width>661</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>:/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <zorder>label_103</zorder>
+      <zorder>label_14</zorder>
+      <zorder>label</zorder>
+      <zorder>label_2</zorder>
+      <zorder>label_3</zorder>
+      <zorder>referancePoss</zorder>
+      <zorder>nomPoss</zorder>
+      <zorder>ajouterEtatMateriauxPoss1</zorder>
+      <zorder>ajouteretatMateriauxposs0</zorder>
+      <zorder>ajouterposs</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>modifier</string>
+      </attribute>
+      <widget class="QPushButton" name="Modifier_materiel_possession">
+       <property name="geometry">
+        <rect>
+         <x>564</x>
+         <y>242</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#Modifier_materiel_possession{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#Modifier_materiel_possession:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+       </property>
+       <property name="text">
+        <string>Modifier</string>
+       </property>
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/images/img/B.png</normaloff>:/images/img/B.png</iconset>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>40</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Referance:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>130</y>
+         <width>61</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Etat :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>80</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Nom du materiel:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="mat_poss_nom_mod">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>69</y>
+         <width>113</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="mat_poss_etat_b_mod">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>130</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>bonne etat</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="mat_poss_m__mod">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>130</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>mauvaise etat</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="referance_mat_poss_modifier">
+       <property name="geometry">
+        <rect>
+         <x>278</x>
+         <y>40</y>
+         <width>111</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_32">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressources.qrc">:/images/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_104">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>-8</y>
+         <width>671</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>:/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <zorder>label_104</zorder>
+      <zorder>label_32</zorder>
+      <zorder>Modifier_materiel_possession</zorder>
+      <zorder>label_4</zorder>
+      <zorder>label_5</zorder>
+      <zorder>label_6</zorder>
+      <zorder>mat_poss_nom_mod</zorder>
+      <zorder>mat_poss_etat_b_mod</zorder>
+      <zorder>mat_poss_m__mod</zorder>
+      <zorder>referance_mat_poss_modifier</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_7">
+      <attribute name="title">
+       <string>supprimer</string>
+      </attribute>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>120</y>
+         <width>271</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Entrer la referance du materiel à supprimer :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="supp_mat_poss1">
+       <property name="geometry">
+        <rect>
+         <x>570</x>
+         <y>240</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#supp_mat_poss1{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#supp_mat_poss1:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/images/img/PP.png</normaloff>:/images/img/PP.png</iconset>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="referance_mat_poss_supprimer_combobox1">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>120</y>
+         <width>111</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressources.qrc">:/images/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_105">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>-1</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>:/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <zorder>label_105</zorder>
+      <zorder>label_33</zorder>
+      <zorder>label_8</zorder>
+      <zorder>supp_mat_poss1</zorder>
+      <zorder>referance_mat_poss_supprimer_combobox1</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="title">
+       <string>afficher</string>
+      </attribute>
+      <widget class="QTableView" name="tableView">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>341</width>
+         <height>251</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>30</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Trier par :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>90</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>rechercher par referance:</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_trier_poss">
+       <property name="geometry">
+        <rect>
+         <x>490</x>
+         <y>30</y>
+         <width>81</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <item>
+        <property name="text">
+         <string>Nom</string>
+        </property>
+        <property name="icon">
+         <iconset resource="ressources.qrc">
+          <normaloff>:/images/img/alpha.png</normaloff>:/images/img/alpha.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>referance</string>
+        </property>
+        <property name="icon">
+         <iconset resource="ressources.qrc">
+          <normaloff>:/images/img/number.png</normaloff>:/images/img/number.png</iconset>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="label_37">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>220</y>
+         <width>301</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>selectionner la referance du materiel à supprimer :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="supprimer_mat_poss_tab">
+       <property name="geometry">
+        <rect>
+         <x>470</x>
+         <y>250</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#supprimer_mat_poss_tab{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#supprimer_mat_poss_tab:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/images/img/PP.png</normaloff>:/images/img/PP.png</iconset>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="combo_box_recherche_poss">
+       <property name="geometry">
+        <rect>
+         <x>540</x>
+         <y>90</y>
+         <width>111</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_35">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>0</y>
+         <width>671</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressources.qrc">:/images/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="imprimer_mat_poss">
+       <property name="geometry">
+        <rect>
+         <x>470</x>
+         <y>180</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">  background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);</string>
+       </property>
+       <property name="text">
+        <string>Imprimer</string>
+       </property>
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/images/img/unnamed.png</normaloff>:/images/img/unnamed.png</iconset>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_106">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>:/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>540</x>
+         <y>120</y>
+         <width>113</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_49">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>130</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>rechercher par nom:</string>
+       </property>
+      </widget>
+      <zorder>label_106</zorder>
+      <zorder>label_35</zorder>
+      <zorder>tableView</zorder>
+      <zorder>label_9</zorder>
+      <zorder>label_10</zorder>
+      <zorder>comboBox_trier_poss</zorder>
+      <zorder>label_37</zorder>
+      <zorder>supprimer_mat_poss_tab</zorder>
+      <zorder>combo_box_recherche_poss</zorder>
+      <zorder>imprimer_mat_poss</zorder>
+      <zorder>lineEdit</zorder>
+      <zorder>label_49</zorder>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_45">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>751</width>
+       <height>391</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressources.qrc">:/images/img/Untitled-1.jpg</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_48">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>-20</y>
+       <width>751</width>
+       <height>411</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>:/img/Untitled-1.jpg</pixmap>
+     </property>
+    </widget>
+    <zorder>label_48</zorder>
+    <zorder>label_45</zorder>
+    <zorder>tabWidget_2</zorder>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>materiaux manquants</string>
+    </attribute>
+    <widget class="QTabWidget" name="tabWidget_6">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>30</y>
+       <width>661</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTabWidget::pane { /* The tab widget frame */
+	background-image: url(:/pic/pic.jpeg);
+	background-image: url(:/pic/pic.jpeg);
+	background-image: url(:/pic/pic.jpeg);
+
+border-top: 5px solid #535353;
+}
+QTabWidget::tab-bar {
+left: 0px; /* move to the right by 5px */
+}
+/* Style the tab using the tab sub-control. Note that it reads QTabBar not QTabWidget */
+QTabBar::tab {
+background: #dcdcdc;
+border: 2px solid #535353;
+border-bottom-color: #535353; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 120px;
+padding: 8px;
+color: #6a1616;
+font-size:15px;
+font-family:Arial, Helvetica, sans-serif;
+}
+QTabBar::tab:selected, QTabBar::tab:hover {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #c3a1a1, stop: 0.4 #194a99, stop: 0.5 #335fff, stop: 1.0 #5d9eff);
+}
+QTabBar::tab:selected {
+border-color: #9B9B9B;
+border-bottom-color: #535353; /* same as pane color */
+color: #dcdcdc;
+font-size:15px;
+font-family:Arial , Helvetica, sans-serif;
+}
+QTabBar::tab:!selected {
+margin-top: 2px; /* make non-selected tabs look smaller */
+}
+QLineEdit {
+  width: 100%;
+  padding: 40px 40px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}</string>
+     </property>
+     <property name="tabShape">
+      <enum>QTabWidget::Rounded</enum>
+     </property>
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <widget class="QWidget" name="tab_20">
+      <attribute name="title">
+       <string>ajouter</string>
+      </attribute>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>30</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Referance :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>80</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>nom du mateiel manquant:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="refmatmanq">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>20</y>
+         <width>113</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="nommanq">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>70</y>
+         <width>113</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_23">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>130</y>
+         <width>51</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Prix :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="prixmanq">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>120</y>
+         <width>113</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ajoutermateriauxmanq">
+       <property name="geometry">
+        <rect>
+         <x>570</x>
+         <y>240</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#ajoutermateriauxmanq{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#ajoutermateriauxmanq:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+       </property>
+       <property name="text">
+        <string>Ajouter</string>
+       </property>
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/images/img/app.png</normaloff>:/images/img/app.png</iconset>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>180</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Disponibilité:</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="dispo_oui">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>180</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Oui</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="dispo_non">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>180</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Non</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_36">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressources.qrc">:/images/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_107">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>-8</y>
+         <width>661</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>:/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <zorder>label_107</zorder>
+      <zorder>label_36</zorder>
+      <zorder>label_21</zorder>
+      <zorder>label_22</zorder>
+      <zorder>refmatmanq</zorder>
+      <zorder>nommanq</zorder>
+      <zorder>label_23</zorder>
+      <zorder>prixmanq</zorder>
+      <zorder>ajoutermateriauxmanq</zorder>
+      <zorder>label_7</zorder>
+      <zorder>dispo_oui</zorder>
+      <zorder>dispo_non</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_21">
+      <attribute name="title">
+       <string>modifier</string>
+      </attribute>
+      <widget class="QLabel" name="label_25">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>30</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string> referance :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>80</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string> nom du mateiel :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_27">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>130</y>
+         <width>61</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string> prix :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="nom_materiel_manquant_modfier">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>69</y>
+         <width>113</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="prix_materiel_manquant_modifier">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>119</y>
+         <width>113</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="modifier_materiel_manquant">
+       <property name="geometry">
+        <rect>
+         <x>574</x>
+         <y>240</y>
+         <width>81</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#modifier_materiel_manquant{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#modifier_materiel_manquant:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+       </property>
+       <property name="text">
+        <string>Modifier</string>
+       </property>
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/images/img/B.png</normaloff>:/images/img/B.png</iconset>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_24">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>180</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Disponibilité:</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="dispo_oui_materiel_manquant_modifier">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>180</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Oui</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="ispo_non_materiel_manquant_modifier">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>180</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Non</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="referance_mat_manq_modifier">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>30</y>
+         <width>111</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_38">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressources.qrc">:/images/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_108">
+       <property name="geometry">
+        <rect>
+         <x>-4</x>
+         <y>-1</y>
+         <width>671</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>:/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <zorder>label_108</zorder>
+      <zorder>label_38</zorder>
+      <zorder>label_25</zorder>
+      <zorder>label_26</zorder>
+      <zorder>label_27</zorder>
+      <zorder>nom_materiel_manquant_modfier</zorder>
+      <zorder>prix_materiel_manquant_modifier</zorder>
+      <zorder>modifier_materiel_manquant</zorder>
+      <zorder>label_24</zorder>
+      <zorder>dispo_oui_materiel_manquant_modifier</zorder>
+      <zorder>ispo_non_materiel_manquant_modifier</zorder>
+      <zorder>referance_mat_manq_modifier</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_22">
+      <attribute name="title">
+       <string>supprimer</string>
+      </attribute>
+      <widget class="QLabel" name="label_28">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>271</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Entrer la referance du materiel à supprimer :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="supprimermatmanq1">
+       <property name="geometry">
+        <rect>
+         <x>554</x>
+         <y>240</y>
+         <width>91</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#supprimermatmanq1{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#supprimermatmanq1:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/images/img/PP.png</normaloff>:/images/img/PP.png</iconset>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="referance_mat_manq_supprimer_combobox1">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>120</y>
+         <width>111</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_39">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressources.qrc">:/images/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_109">
+       <property name="geometry">
+        <rect>
+         <x>-4</x>
+         <y>-1</y>
+         <width>671</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>:/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <zorder>label_109</zorder>
+      <zorder>label_39</zorder>
+      <zorder>label_28</zorder>
+      <zorder>supprimermatmanq1</zorder>
+      <zorder>referance_mat_manq_supprimer_combobox1</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_23">
+      <attribute name="title">
+       <string>afficher</string>
+      </attribute>
+      <widget class="QTableView" name="tableView_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>331</width>
+         <height>261</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_29">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>20</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Trier par :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_30">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>90</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Rechercher :</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_tri_ma_manq">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>20</y>
+         <width>69</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Nom</string>
+        </property>
+        <property name="icon">
+         <iconset resource="ressources.qrc">
+          <normaloff>:/images/img/alpha.png</normaloff>:/images/img/alpha.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>referance</string>
+        </property>
+        <property name="icon">
+         <iconset resource="ressources.qrc">
+          <normaloff>:/images/img/number.png</normaloff>:/images/img/number.png</iconset>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="label_50">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>190</y>
+         <width>301</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>selectionner la referance du materiel à supprimer :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="supprimer_mat_manq_tab">
+       <property name="geometry">
+        <rect>
+         <x>454</x>
+         <y>220</y>
+         <width>91</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#supprimer_mat_manq_tab{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#supprimer_mat_manq_tab:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/images/img/PP.png</normaloff>:/images/img/PP.png</iconset>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_rechercher_mat_manq">
+       <property name="geometry">
+        <rect>
+         <x>470</x>
+         <y>90</y>
+         <width>111</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_40">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressources.qrc">:/images/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_110">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>-1</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>:/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <zorder>label_110</zorder>
+      <zorder>label_40</zorder>
+      <zorder>tableView_3</zorder>
+      <zorder>label_29</zorder>
+      <zorder>label_30</zorder>
+      <zorder>comboBox_tri_ma_manq</zorder>
+      <zorder>label_50</zorder>
+      <zorder>supprimer_mat_manq_tab</zorder>
+      <zorder>comboBox_rechercher_mat_manq</zorder>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_46">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>751</width>
+       <height>391</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressources.qrc">:/images/img/Untitled-1.jpg</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_101">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>771</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>:/img/Untitled-1.jpg</pixmap>
+     </property>
+    </widget>
+    <zorder>label_101</zorder>
+    <zorder>label_46</zorder>
+    <zorder>tabWidget_6</zorder>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>materiaux en maintenace </string>
+    </attribute>
+    <widget class="QTabWidget" name="tabWidget_5">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>30</y>
+       <width>651</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTabWidget::pane { /* The tab widget frame */
+	background-image: url(:/pic/pic.jpeg);
+	background-image: url(:/pic/pic.jpeg);
+	background-image: url(:/pic/pic.jpeg);
+
+border-top: 5px solid #535353;
+}
+QTabWidget::tab-bar {
+left: 0px; /* move to the right by 5px */
+}
+/* Style the tab using the tab sub-control. Note that it reads QTabBar not QTabWidget */
+QTabBar::tab {
+background: #dcdcdc;
+border: 2px solid #535353;
+border-bottom-color: #535353; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 120px;
+padding: 8px;
+color: #6a1616;
+font-size:15px;
+font-family:Arial, Helvetica, sans-serif;
+}
+QTabBar::tab:selected, QTabBar::tab:hover {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #c3a1a1, stop: 0.4 #194a99, stop: 0.5 #335fff, stop: 1.0 #5d9eff);
+}
+QTabBar::tab:selected {
+border-color: #9B9B9B;
+border-bottom-color: #535353; /* same as pane color */
+color: #dcdcdc;
+font-size:15px;
+font-family:Arial , Helvetica, sans-serif;
+}
+QTabBar::tab:!selected {
+margin-top: 2px; /* make non-selected tabs look smaller */
+}
+QLineEdit {
+  width: 100%;
+  padding: 40px 40px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}</string>
+     </property>
+     <property name="tabShape">
+      <enum>QTabWidget::Rounded</enum>
+     </property>
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <widget class="QWidget" name="tab_16">
+      <attribute name="title">
+       <string>ajouter</string>
+      </attribute>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>30</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>referance :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>70</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>nom du mateiel :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="ref_mat_maint_a_ajouter">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>19</y>
+         <width>113</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>110</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>region :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_31">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>170</y>
+         <width>221</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>le materiel en maintenace jusqu'a :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="region_mat_maint_a_ajouter">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>99</y>
+         <width>113</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QDateTimeEdit" name="dateTimeEdit">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>170</y>
+         <width>194</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ajouter_mat_maintenace">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>240</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#ajouter_mat_maintenace{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#ajouter_mat_maintenace:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+       </property>
+       <property name="text">
+        <string>Ajouter</string>
+       </property>
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/images/img/app.png</normaloff>:/images/img/app.png</iconset>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="combo_nom_mat_maint">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>70</y>
+         <width>111</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_41">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressources.qrc">:/images/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_111">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>-8</y>
+         <width>651</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>:/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <zorder>label_111</zorder>
+      <zorder>label_41</zorder>
+      <zorder>label_11</zorder>
+      <zorder>label_12</zorder>
+      <zorder>ref_mat_maint_a_ajouter</zorder>
+      <zorder>label_13</zorder>
+      <zorder>label_31</zorder>
+      <zorder>region_mat_maint_a_ajouter</zorder>
+      <zorder>dateTimeEdit</zorder>
+      <zorder>ajouter_mat_maintenace</zorder>
+      <zorder>combo_nom_mat_maint</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_17">
+      <attribute name="title">
+       <string>modifier</string>
+      </attribute>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>30</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string> referance :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>70</y>
+         <width>161</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>nouveau nom du mateiel :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="nom_materiaux_maintenace_modifier">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>60</y>
+         <width>113</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>120</y>
+         <width>111</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>nouvelle region :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="region_mateiraux_maintance_modifier">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>110</y>
+         <width>113</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_34">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>190</y>
+         <width>61</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>durée :</string>
+       </property>
+      </widget>
+      <widget class="QDateTimeEdit" name="dure_materiaux_maintance_modifier">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>190</y>
+         <width>194</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="modifier_materiaux_maintenance">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>240</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#modifier_materiaux_maintenance{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#modifier_materiaux_maintenance:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+       </property>
+       <property name="text">
+        <string>Modifier</string>
+       </property>
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/images/img/B.png</normaloff>:/images/img/B.png</iconset>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="referance_mat_maint_modifier">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>30</y>
+         <width>111</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_42">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressources.qrc">:/images/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_112">
+       <property name="geometry">
+        <rect>
+         <x>-4</x>
+         <y>-1</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>:/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <zorder>label_112</zorder>
+      <zorder>label_42</zorder>
+      <zorder>label_15</zorder>
+      <zorder>label_16</zorder>
+      <zorder>nom_materiaux_maintenace_modifier</zorder>
+      <zorder>label_17</zorder>
+      <zorder>region_mateiraux_maintance_modifier</zorder>
+      <zorder>label_34</zorder>
+      <zorder>dure_materiaux_maintance_modifier</zorder>
+      <zorder>modifier_materiaux_maintenance</zorder>
+      <zorder>referance_mat_maint_modifier</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_18">
+      <attribute name="title">
+       <string>supprimer</string>
+      </attribute>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>271</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Entrer la referance du materiel à supprimer :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="supprimer_mat_maintenace1">
+       <property name="geometry">
+        <rect>
+         <x>554</x>
+         <y>240</y>
+         <width>91</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#supprimer_mat_maintenace1{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#supprimer_mat_maintenace1:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/images/img/PP.png</normaloff>:/images/img/PP.png</iconset>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="referance_mat_maint_supprimer_combobox_1">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>120</y>
+         <width>111</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="currentIndex">
+        <number>-1</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_43">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressources.qrc">:/images/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_113">
+       <property name="geometry">
+        <rect>
+         <x>-4</x>
+         <y>-1</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>:/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <zorder>label_113</zorder>
+      <zorder>label_43</zorder>
+      <zorder>label_18</zorder>
+      <zorder>supprimer_mat_maintenace1</zorder>
+      <zorder>referance_mat_maint_supprimer_combobox_1</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_19">
+      <attribute name="title">
+       <string>afficher</string>
+      </attribute>
+      <widget class="QTableView" name="tableView_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>331</width>
+         <height>261</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>60</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Trier par :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>120</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Rechercher :</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_tri_mat_maint">
+       <property name="geometry">
+        <rect>
+         <x>500</x>
+         <y>60</y>
+         <width>81</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Nom</string>
+        </property>
+        <property name="icon">
+         <iconset resource="ressources.qrc">
+          <normaloff>:/images/img/alpha.png</normaloff>:/images/img/alpha.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>referance</string>
+        </property>
+        <property name="icon">
+         <iconset resource="ressources.qrc">
+          <normaloff>:/images/img/number.png</normaloff>:/images/img/number.png</iconset>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="label_51">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>200</y>
+         <width>301</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>selectionner la referance du materiel à supprimer :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="supprimer_mat_maint_tab">
+       <property name="geometry">
+        <rect>
+         <x>460</x>
+         <y>240</y>
+         <width>91</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#supprimer_mat_maint_tab{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#supprimer_mat_maint_tab:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/images/img/PP.png</normaloff>:/images/img/PP.png</iconset>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_rechercher_mat_maint">
+       <property name="geometry">
+        <rect>
+         <x>500</x>
+         <y>120</y>
+         <width>101</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_44">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>0</y>
+         <width>661</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressources.qrc">:/images/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_114">
+       <property name="geometry">
+        <rect>
+         <x>-4</x>
+         <y>-8</y>
+         <width>671</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>:/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <zorder>label_114</zorder>
+      <zorder>label_44</zorder>
+      <zorder>tableView_2</zorder>
+      <zorder>label_19</zorder>
+      <zorder>label_20</zorder>
+      <zorder>comboBox_tri_mat_maint</zorder>
+      <zorder>label_51</zorder>
+      <zorder>supprimer_mat_maint_tab</zorder>
+      <zorder>comboBox_rechercher_mat_maint</zorder>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_47">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>751</width>
+       <height>391</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressources.qrc">:/images/img/Untitled-1.jpg</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_102">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>751</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>:/img/Untitled-1.jpg</pixmap>
+     </property>
+    </widget>
+    <zorder>label_102</zorder>
+    <zorder>label_47</zorder>
+    <zorder>tabWidget_5</zorder>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="ressources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>StyleFile.qss</file>
+        <file>baladitech.PNG</file>
+        <file>Design baladitech CRUD.jpg</file>
+        <file>Design baladitech inCRUD.jpg</file>
+        <file>Design baladitech inCRUD.png</file>
+    </qresource>
+</RCC>

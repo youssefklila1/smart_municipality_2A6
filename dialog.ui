@@ -39,7 +39,7 @@ background-image: url(:/image/Design baladitech CRUD.jpg);</string>
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <property name="iconSize">
     <size>

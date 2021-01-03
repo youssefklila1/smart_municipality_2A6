@@ -73,6 +73,8 @@ private slots:
 
     void on_pushButton_7_clicked();
 
+    void on_Affichage_3_activated(const QModelIndex &index);
+
 private:
     Ui::Dialog *ui;
     Societes tmpsocietes;

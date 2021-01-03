@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.11.0, 2020-12-05T00:55:40. -->
+<!-- Written by QtCreator 4.11.0, 2021-01-03T23:12:44. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -287,8 +287,9 @@
     </valuelist>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:F:/Selim/Kraya/2A6/Projet Qt/Qt/Module_societes_chantiers/Module_societes_chantiers.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">F:/Selim/Kraya/2A6/Projet Qt/Qt/Module_societes_chantiers/Module_societes_chantiers.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Module_societes_chantiers2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Selim/Desktop/smart_municipality_2A6/Module_societes_chantiers.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/Selim/Desktop/smart_municipality_2A6/Module_societes_chantiers.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
     <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>

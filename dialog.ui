@@ -76,7 +76,7 @@ background-image: url(:/image/Design baladitech CRUD.jpg);</string>
       <string notr="true">background-image: url(:/image/Design baladitech inCRUD.png);</string>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">

@@ -247,6 +247,19 @@ background-image: url(:/image/Design baladitech CRUD.jpg);</string>
         <string>ID</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="imprimer">
+       <property name="geometry">
+        <rect>
+         <x>590</x>
+         <y>230</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Imprimer</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </widget>

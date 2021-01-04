@@ -1,21 +1,21 @@
 #include "dialog.h"
 #include "ui_dialog.h"
 
+
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
     ui->Affichage_2->setModel(tmpsocietes.afficher());
-        ui->Affichage_2->setSelectionBehavior(QAbstractItemView::SelectRows);
-        ui->Affichage_2->setSelectionMode(QAbstractItemView::SingleSelection);
-        ui->Affichage_3->setModel(tmpchantiers.afficher());
-            ui->Affichage_3->setSelectionBehavior(QAbstractItemView::SelectRows);
-            ui->Affichage_3->setSelectionMode(QAbstractItemView::SingleSelection);
-         ui->Affichage_4->setModel(tmpchantiers.afficher_societes());
-         ui->Affichage_4->setSelectionBehavior(QAbstractItemView::SelectRows);
-         ui->Affichage_4->setSelectionMode(QAbstractItemView::SingleSelection);
-
+    ui->Affichage_2->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->Affichage_2->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->Affichage_3->setModel(tmpchantiers.afficher());
+    ui->Affichage_3->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->Affichage_3->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->Affichage_4->setModel(tmpchantiers.afficher_societes());
+    ui->Affichage_4->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->Affichage_4->setSelectionMode(QAbstractItemView::SingleSelection);
 }
 
 
@@ -28,12 +28,12 @@ void Dialog::on_pushButton_4_clicked()
 {
     QString id=ui->lineEdit_12->text();
     QString nom=ui->lineEdit_13->text();
-                    Societes societes(id,nom);
-                    societes.ajouter();
-                    //ui->comboBox_3->addItem(nom);
-                    ui->Affichage_2->setModel(tmpsocietes.afficher());
-                    ui->lineEdit_12->setText("");
-                    ui->lineEdit_13->setText("");
+    Societes societes(id,nom);
+    societes.ajouter();
+    //ui->comboBox_3->addItem(nom);
+    ui->Affichage_2->setModel(tmpsocietes.afficher());
+    ui->lineEdit_12->setText("");
+    ui->lineEdit_13->setText("");
 }
 
 
@@ -41,31 +41,31 @@ void Dialog::on_pushButton_4_clicked()
 void Dialog::on_pushButton_5_clicked()
 {
     if (ui->pushButton_5->isChecked())
-                {
-                    ui->pushButton_5->setDisabled(true);
-                    ui->pushButton_5->setText("Modifiable");
-                    QSqlTableModel *tableModel= new QSqlTableModel();
-                    tableModel->setTable("SOCIETES");
-                    tableModel->select();
-                    ui->Affichage_2->setModel(tableModel);
-                }
-                else
-                {
-                    ui->pushButton_5->setText("Modifier");QSqlQueryModel * model = tmpsocietes.afficher();
-                    ui->Affichage_2->setModel(model);
-                }
+    {
+        ui->pushButton_5->setDisabled(true);
+        ui->pushButton_5->setText("Modifiable");
+        QSqlTableModel *tableModel= new QSqlTableModel();
+        tableModel->setTable("SOCIETES");
+        tableModel->select();
+        ui->Affichage_2->setModel(tableModel);
+    }
+    else
+    {
+        ui->pushButton_5->setText("Modifier");QSqlQueryModel * model = tmpsocietes.afficher();
+        ui->Affichage_2->setModel(model);
+    }
 }
 
 void Dialog::on_pushButton_2_clicked()
 {
     QItemSelectionModel *select = ui->Affichage_2->selectionModel();
 
-        QString id =select->selectedRows(0).value(0).data().toString();
+    QString id =select->selectedRows(0).value(0).data().toString();
 
-        if(tmpsocietes.supprimer(id))
-        {
-            ui->Affichage_2->setModel(tmpsocietes.afficher());
-        }
+    if(tmpsocietes.supprimer(id))
+    {
+        ui->Affichage_2->setModel(tmpsocietes.afficher());
+    }
 }
 
 void Dialog::on_pushButton_3_clicked()
@@ -77,43 +77,43 @@ void Dialog::on_pushButton_3_clicked()
     QString rue=ui->lineEdit_2->text();
     QString affectation=ui->lineEdit_3->text();
 
-                    Chantiers chantiers(id,nom,region,rue,affectation,etat);
-                    chantiers.ajouter();
-                    ui->Affichage_3->setModel(tmpchantiers.afficher());
-                    ui->lineEdit_10->setText("");
-                    ui->lineEdit->setText("");
-                    ui->lineEdit_2->setText("");
-                   ui->Affichage_4->setModel(tmpchantiers.afficher_societes());
+    Chantiers chantiers(id,nom,region,rue,affectation,etat);
+    chantiers.ajouter();
+    ui->Affichage_3->setModel(tmpchantiers.afficher());
+    ui->lineEdit_10->setText("");
+    ui->lineEdit->setText("");
+    ui->lineEdit_2->setText("");
+    ui->Affichage_4->setModel(tmpchantiers.afficher_societes());
 }
 
 void Dialog::on_pushButton_6_clicked()
 {
     if (ui->pushButton_6->isChecked())
-                {
-                    ui->pushButton_6->setDisabled(true);
-                    ui->pushButton_6->setText("Modifiable");
-                    QSqlTableModel *tableModel= new QSqlTableModel();
-                    tableModel->setTable("CHANTIERS");
-                    tableModel->select();
-                    ui->Affichage_3->setModel(tableModel);
-                }
-                else
-                {
-                    ui->pushButton_6->setText("Modifier");QSqlQueryModel * model = tmpchantiers.afficher();
-                    ui->Affichage_3->setModel(model);
-                }
+    {
+        ui->pushButton_6->setDisabled(true);
+        ui->pushButton_6->setText("Modifiable");
+        QSqlTableModel *tableModel= new QSqlTableModel();
+        tableModel->setTable("CHANTIERS");
+        tableModel->select();
+        ui->Affichage_3->setModel(tableModel);
+    }
+    else
+    {
+        ui->pushButton_6->setText("Modifier");QSqlQueryModel * model = tmpchantiers.afficher();
+        ui->Affichage_3->setModel(model);
+    }
 }
 
 void Dialog::on_pushButton_11_clicked()
 {
     QItemSelectionModel *select = ui->Affichage_3->selectionModel();
 
-        QString id =select->selectedRows(0).value(0).data().toString();
+    QString id =select->selectedRows(0).value(0).data().toString();
 
-        if(tmpchantiers.supprimer(id))
-        {
-            ui->Affichage_3->setModel(tmpchantiers.afficher());
-        }
+    if(tmpchantiers.supprimer(id))
+    {
+        ui->Affichage_3->setModel(tmpchantiers.afficher());
+    }
 }
 
 //void Dialog::on_comboBox_3_currentIndexChanged(const QString &arg1)
@@ -170,100 +170,100 @@ void Dialog::on_pushButton_11_clicked()
 void Dialog::on_radioButton_clicked()
 {
     bool test = true;
-          if (test)
-              {
-              ui->Affichage_2->setModel(tmpsocietes.afficher());
+    if (test)
+    {
+        ui->Affichage_2->setModel(tmpsocietes.afficher());
 
-                  ui->Affichage_2->setModel(tmpsocietes.trier());
+        ui->Affichage_2->setModel(tmpsocietes.trier());
 
 
 
-              }
+    }
 
-          else
-          {
-              QMessageBox::critical(nullptr, QObject::tr("trier societes"),
-                                    QObject::tr("Erreur !.\n"
-                                                "Click Cancel to exit."), QMessageBox::Cancel);
-          }
+    else
+    {
+        QMessageBox::critical(nullptr, QObject::tr("trier societes"),
+                              QObject::tr("Erreur !.\n"
+                                          "Click Cancel to exit."), QMessageBox::Cancel);
+    }
 }
 
 void Dialog::on_radioButton_2_clicked()
 {
     bool test = true;
-          if (test)
-              {
-              ui->Affichage_2->setModel(tmpsocietes.afficher());
+    if (test)
+    {
+        ui->Affichage_2->setModel(tmpsocietes.afficher());
 
-                  ui->Affichage_2->setModel(tmpsocietes.trier_i());
+        ui->Affichage_2->setModel(tmpsocietes.trier_i());
 
 
 
-              }
+    }
 
-          else
-          {
-              QMessageBox::critical(nullptr, QObject::tr("trier societes"),
-                                    QObject::tr("Erreur !.\n"
-                                                "Click Cancel to exit."), QMessageBox::Cancel);
-          }
+    else
+    {
+        QMessageBox::critical(nullptr, QObject::tr("trier societes"),
+                              QObject::tr("Erreur !.\n"
+                                          "Click Cancel to exit."), QMessageBox::Cancel);
+    }
 }
 
 void Dialog::on_radioButton_3_clicked()
 {
     bool test = true;
-          if (test)
-              {
-              ui->Affichage_3->setModel(tmpchantiers.afficher());
+    if (test)
+    {
+        ui->Affichage_3->setModel(tmpchantiers.afficher());
 
-                  ui->Affichage_3->setModel(tmpchantiers.trier_c());
+        ui->Affichage_3->setModel(tmpchantiers.trier_c());
 
-              }
+    }
 
-          else
-          {
-              QMessageBox::critical(nullptr, QObject::tr("trier chantiers"),
-                                    QObject::tr("Erreur !.\n"
-                                                "Click Cancel to exit."), QMessageBox::Cancel);
-          }
+    else
+    {
+        QMessageBox::critical(nullptr, QObject::tr("trier chantiers"),
+                              QObject::tr("Erreur !.\n"
+                                          "Click Cancel to exit."), QMessageBox::Cancel);
+    }
 }
 
 void Dialog::on_radioButton_4_clicked()
 {
     bool test = true;
-          if (test)
-              {
-              ui->Affichage_3->setModel(tmpchantiers.afficher());
+    if (test)
+    {
+        ui->Affichage_3->setModel(tmpchantiers.afficher());
 
-                  ui->Affichage_3->setModel(tmpchantiers.trier_cr());
+        ui->Affichage_3->setModel(tmpchantiers.trier_cr());
 
-              }
+    }
 
-          else
-          {
-              QMessageBox::critical(nullptr, QObject::tr("trier chantiers"),
-                                    QObject::tr("Erreur !.\n"
-                                                "Click Cancel to exit."), QMessageBox::Cancel);
-          }
+    else
+    {
+        QMessageBox::critical(nullptr, QObject::tr("trier chantiers"),
+                              QObject::tr("Erreur !.\n"
+                                          "Click Cancel to exit."), QMessageBox::Cancel);
+    }
 }
 
 void Dialog::on_radioButton_5_clicked()
 {
     bool test = true;
-          if (test)
-              {
-              ui->Affichage_3->setModel(tmpchantiers.afficher());
+    if (test)
+    {
+        ui->Affichage_3->setModel(tmpchantiers.afficher());
 
-                  ui->Affichage_3->setModel(tmpchantiers.trier_ce());
+        ui->Affichage_3->setModel(tmpchantiers.trier_ce());
 
-              }
+    }
 
-          else
-          {
-              QMessageBox::critical(nullptr, QObject::tr("trier chantiers"),
-                                    QObject::tr("Erreur !.\n"
-                                                "Click Cancel to exit."), QMessageBox::Cancel);
-          }
+    else
+    {
+        QMessageBox::critical(nullptr, QObject::tr("trier chantiers"),
+                              QObject::tr("Erreur !.\n"
+                                          "Click Cancel to exit."), QMessageBox::Cancel);
+    }
 }
 
 void Dialog::on_Affichage_4_clicked(const QModelIndex &index)
@@ -273,13 +273,13 @@ void Dialog::on_Affichage_4_clicked(const QModelIndex &index)
 
 void Dialog::on_tabWidget_3_currentChanged(int index)
 {
-     ui->Affichage_4->setModel(tmpchantiers.afficher_societes());
-     ui->Affichage_3->setModel(tmpchantiers.trier_ce());
+    ui->Affichage_4->setModel(tmpchantiers.afficher_societes());
+    ui->Affichage_3->setModel(tmpchantiers.trier_ce());
 }
 
 void Dialog::on_tabWidget_2_currentChanged(int index)
 {
-     ui->Affichage_2->setModel(tmpsocietes.afficher());
+    ui->Affichage_2->setModel(tmpsocietes.afficher());
 }
 
 
@@ -292,20 +292,20 @@ void Dialog::on_commandLinkButton_clicked()
 void Dialog::on_pushButton_8_clicked()
 {
     QString NOM = ui->lineEdit_18->text();
-//        QString type_filmm = ui->TypeFilm->currentText();
-//        QString date_filmm = ui->DateFilm->text();
+    //        QString type_filmm = ui->TypeFilm->currentText();
+    //        QString date_filmm = ui->DateFilm->text();
     //     bool test = tempcommandes.afficher_films(nom_filmm,type_filmm,date_filmm);
 
-          bool test = ui->lineEdit_18->text()==NULL ;
+    bool test = ui->lineEdit_18->text()==NULL ;
     if(test)
-         {
-             ui->Affichage_3->setModel(tmpchantiers.afficher());
+    {
+        ui->Affichage_3->setModel(tmpchantiers.afficher());
 
 
-         }
-         else
-        {
-          ui->Affichage_3->setModel(tmpchantiers.afficher_chantiers(NOM));
+    }
+    else
+    {
+        ui->Affichage_3->setModel(tmpchantiers.afficher_chantiers(NOM));
 
     }
 
@@ -315,16 +315,16 @@ void Dialog::on_pushButton_8_clicked()
 void Dialog::on_pushButton_7_clicked()
 {
     QString NOM = ui->lineEdit_17->text();
-          bool test = ui->lineEdit_17->text()==NULL ;
+    bool test = ui->lineEdit_17->text()==NULL ;
     if(test)
-         {
-             ui->Affichage_2->setModel(tmpsocietes.afficher());
+    {
+        ui->Affichage_2->setModel(tmpsocietes.afficher());
 
 
-         }
-         else
-        {
-          ui->Affichage_2->setModel(tmpsocietes.afficher_societes(NOM));
+    }
+    else
+    {
+        ui->Affichage_2->setModel(tmpsocietes.afficher_societes(NOM));
 
     }
 
@@ -337,16 +337,16 @@ void Dialog::on_lineEdit_18_textChanged(const QString &arg1)
     QString NOM = ui->lineEdit_18->text();
 
 
-          bool test = ui->lineEdit_18->text()==NULL ;
+    bool test = ui->lineEdit_18->text()==NULL ;
     if(test)
-         {
-             ui->Affichage_3->setModel(tmpchantiers.afficher());
+    {
+        ui->Affichage_3->setModel(tmpchantiers.afficher());
 
 
-         }
-         else
-        {
-          ui->Affichage_3->setModel(tmpchantiers.afficher_chantiers(arg1));
+    }
+    else
+    {
+        ui->Affichage_3->setModel(tmpchantiers.afficher_chantiers(arg1));
 
     }
 
@@ -355,18 +355,60 @@ void Dialog::on_lineEdit_18_textChanged(const QString &arg1)
 void Dialog::on_lineEdit_17_textChanged(const QString &arg1)
 {
 
-        QString NOM = ui->lineEdit_17->text();
+    QString NOM = ui->lineEdit_17->text();
 
-              bool test = ui->lineEdit_17->text()==NULL ;
-        if(test)
-             {
-                 ui->Affichage_2->setModel(tmpsocietes.afficher());
+    bool test = ui->lineEdit_17->text()==NULL ;
+    if(test)
+    {
+        ui->Affichage_2->setModel(tmpsocietes.afficher());
 
 
-             }
-             else
-            {
-              ui->Affichage_2->setModel(tmpsocietes.afficher_societes(NOM));
+    }
+    else
+    {
+        ui->Affichage_2->setModel(tmpsocietes.afficher_societes(NOM));
 
-        }
+    }
 }
+
+void Dialog::on_imprimer_clicked()
+{
+    //QDateTime datecreation = date.currentDateTime();
+    //QString afficheDC = "Date de Creation PDF : " + datecreation.toString() ;
+    QPdfWriter pdf("C:/Users/Selim/Desktop/smart_municipality_2A6/Pdf.pdf");
+    QPainter painter(&pdf);
+    int i = 4000;
+    painter.setPen(Qt::color1);
+    painter.setFont(QFont("Arial", 30));
+    painter.drawText(1100,1200,"Liste Des Societes ");
+    painter.setPen(Qt::black);
+    painter.setFont(QFont("Arial", 50));
+    painter.drawRect(100,100,7300,2600);
+    painter.drawPixmap(QRect(6600,70,1920*2,1080*2),QPixmap("C:/Users/Selim/Desktop/smart_municipality_2A6/baladitech.png"));
+    painter.drawRect(0,3000,9600,500);
+    painter.setFont(QFont("Arial", 9));
+    painter.drawText(200,3300,"ID");
+    painter.drawText(1700,3300,"NOM");
+
+    QSqlQuery query;
+    query.prepare("select * from SOCIETES");
+    query.exec();
+    while (query.next())
+    {
+        painter.drawText(200,i,query.value(0).toString());
+        painter.drawText(1700,i,query.value(1).toString());
+
+        i = i + 500;
+    }
+    int reponse = QMessageBox::question(this, "GÃ©nerer PDF", "<PDF EnregistrÃ©>...Vous Voulez Affichez Le PDF ?", QMessageBox::Yes |  QMessageBox::No);
+    if (reponse == QMessageBox::Yes)
+    {
+        QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/Selim/Desktop/smart_municipality_2A6/Pdf.pdf"));
+        painter.end();
+    }
+    if (reponse == QMessageBox::No)
+    {
+        painter.end();
+    }
+}
+

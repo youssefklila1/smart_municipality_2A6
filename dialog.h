@@ -15,6 +15,12 @@
 #include <QAbstractItemView>
 #include <QRegExp>
 #include <QFileDialog>
+#include <QPrinter>
+#include<QPrintDialog>
+#include <QFileDialog>
+#include <QPdfWriter>
+#include <QPainter>
+#include <QDesktopServices>
 
 namespace Ui {
 class Dialog;
@@ -78,6 +84,8 @@ private slots:
     void on_lineEdit_18_textChanged(const QString &arg1);
 
     void on_lineEdit_17_textChanged(const QString &arg1);
+
+    void on_imprimer_clicked();
 
 private:
     Ui::Dialog *ui;

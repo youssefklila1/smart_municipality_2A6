@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>732</width>
-    <height>469</height>
+    <height>465</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,21 +18,91 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>110</y>
+      <y>100</y>
       <width>731</width>
-      <height>321</height>
+      <height>361</height>
      </rect>
     </property>
     <property name="currentIndex">
      <number>0</number>
     </property>
     <widget class="QWidget" name="page">
-     <widget class="QLabel" name="label_2">
+     <widget class="QLineEdit" name="utilisateur">
       <property name="geometry">
        <rect>
-        <x>-10</x>
+        <x>520</x>
+        <y>110</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+      </property>
+      <property name="placeholderText">
+       <string>               login</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="motdepasse">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>150</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+      <property name="placeholderText">
+       <string>           password</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="connection">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>220</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#connection{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#connection:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);
+
+
+}</string>
+      </property>
+      <property name="text">
+       <string>connexion</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
         <y>0</y>
-        <width>741</width>
+        <width>731</width>
         <height>321</height>
        </rect>
       </property>
@@ -40,15 +110,15 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Desktop/design Qt/ffffffffff.jpg</pixmap>
+       <pixmap resource="ressources.qrc">:/images/img/Untitled-2.jpg</pixmap>
       </property>
      </widget>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>-10</y>
-        <width>111</width>
+        <x>530</x>
+        <y>0</y>
+        <width>121</width>
         <height>111</height>
        </rect>
       </property>
@@ -56,176 +126,225 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Desktop/design Qt/eeeeeeee.png</pixmap>
+       <pixmap resource="ressources.qrc">:/images/img/eeeeeeee.png</pixmap>
       </property>
      </widget>
-     <widget class="QLineEdit" name="utilisateur">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>110</y>
-        <width>151</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="motdepasse">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>150</y>
-        <width>151</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Password</enum>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>260</y>
-        <width>91</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Se connecter</string>
-      </property>
-     </widget>
-     <zorder>label_2</zorder>
+     <zorder>label</zorder>
      <zorder>utilisateur</zorder>
      <zorder>motdepasse</zorder>
-     <zorder>pushButton</zorder>
-     <zorder>label_3</zorder>
+     <zorder>connection</zorder>
+     <zorder>label_4</zorder>
     </widget>
     <widget class="QWidget" name="page_2">
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="gestion_employe">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>20</y>
+        <x>490</x>
+        <y>10</y>
         <width>191</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#gestion_employe{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}
+
+#gestion_employe:pressed{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #fff07b;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}</string>
       </property>
       <property name="text">
        <string>Employées</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="gestion_dons">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>70</y>
+        <x>490</x>
+        <y>50</y>
         <width>191</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#gestion_dons{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}
+
+#gestion_dons:pressed{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #fff07b;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}</string>
       </property>
       <property name="text">
        <string>Dons</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="gestion_chantiers">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>120</y>
+        <x>490</x>
+        <y>90</y>
         <width>191</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#gestion_chantiers{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}
+
+#gestion_chantiers:pressed{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #fff07b;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}</string>
       </property>
       <property name="text">
        <string>Chantiers</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="gestion_fournisseurs">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>170</y>
+        <x>490</x>
+        <y>130</y>
         <width>191</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#gestion_fournisseurs{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}
+
+#gestion_fournisseurs:pressed{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #fff07b;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}</string>
       </property>
       <property name="text">
        <string>Fournisseurs</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_6">
+     <widget class="QPushButton" name="gestion_materiaux">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>220</y>
+        <x>490</x>
+        <y>170</y>
         <width>191</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#gestion_materiaux{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}
+
+#gestion_materiaux:pressed{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #fff07b;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}</string>
       </property>
       <property name="text">
        <string>Matériaux</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_7">
+     <widget class="QPushButton" name="gestion_evenement">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>272</y>
+        <x>490</x>
+        <y>210</y>
         <width>191</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#gestion_evenement{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}
+
+#gestion_evenement:pressed{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #fff07b;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}</string>
       </property>
       <property name="text">
        <string>Evenement</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>-10</x>
+        <x>0</x>
         <y>0</y>
-        <width>741</width>
-        <height>311</height>
+        <width>731</width>
+        <height>331</height>
        </rect>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Desktop/ffffffffff.jpg</pixmap>
+       <pixmap resource="ressources.qrc">:/images/img/Untitled-2.jpg</pixmap>
       </property>
      </widget>
-     <zorder>label_4</zorder>
-     <zorder>pushButton_2</zorder>
-     <zorder>pushButton_3</zorder>
-     <zorder>pushButton_4</zorder>
-     <zorder>pushButton_5</zorder>
-     <zorder>pushButton_6</zorder>
-     <zorder>pushButton_7</zorder>
+     <zorder>label_3</zorder>
+     <zorder>gestion_employe</zorder>
+     <zorder>gestion_dons</zorder>
+     <zorder>gestion_chantiers</zorder>
+     <zorder>gestion_fournisseurs</zorder>
+     <zorder>gestion_materiaux</zorder>
+     <zorder>gestion_evenement</zorder>
     </widget>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>-10</x>
-      <y>-10</y>
+      <x>0</x>
+      <y>0</y>
       <width>741</width>
-      <height>111</height>
+      <height>101</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../Desktop/design Qt/Untitled-3.jpg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
+     <pixmap resource="ressources.qrc">:/images/img/Untitled-3.jpg</pixmap>
     </property>
    </widget>
-   <zorder>label</zorder>
-   <zorder>stackedWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -239,6 +358,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="ressources.qrc"/>
+ </resources>
  <connections/>
 </ui>

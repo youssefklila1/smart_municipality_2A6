@@ -20,8 +20,21 @@ public:
     int get_referance();
 
     bool ajouter();
-    QSqlQueryModel * afficher();
     bool supprimer(int);
+    bool modifier(int,QString,QString);
+    QSqlQueryModel * tri_ref();
+    QSqlQueryModel * tri_nom();
+    QSqlQueryModel * afficher();
+    QSqlQueryModel * afficher_rech(QString reff);
+    QSqlQueryModel * afficher_nom();
+    QSqlQueryModel * rechercheDynamic(QString);
+    bool verif_nom(QString);
+    void imprimer();
+
+    bool verif_id(int);
+
+
+
 
 };
 

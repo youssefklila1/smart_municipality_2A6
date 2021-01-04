@@ -1,15 +1,31 @@
 #include "mainwindow.h"
-#include "dialog.h"
+#include "mainwindow.h"
 #include "connection.h"
+#include "first.h"
 #include <QMessageBox>
+#include <QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QLegend>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
 
+
+
+
     QApplication a(argc, argv);
     Connection c ;
-    MainWindow w ;
+    first w ;
     bool test =c.createconnect();
     if (test)
      {

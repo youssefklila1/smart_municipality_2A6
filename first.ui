@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>first</class>
+ <widget class="QDialog" name="first">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>717</width>
+    <height>420</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>                                                                                                       LOGIN</string>
+  </property>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>741</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ressources.qrc">:/images/img/Untitled-3.jpg</pixmap>
+   </property>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>100</y>
+     <width>721</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="page_3">
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>-10</y>
+       <width>731</width>
+       <height>361</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressources.qrc">:/images/img/Untitled-2.jpg</pixmap>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="connection">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>220</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#connection{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#connection:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);
+
+
+}</string>
+     </property>
+     <property name="text">
+      <string>connexion</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>30</y>
+       <width>121</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressources.qrc">:/images/img/eeeeeeee.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="motdepasse">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>180</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>           password</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="utilisateur">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>140</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;</string>
+     </property>
+     <property name="placeholderText">
+      <string>               login</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_4">
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>731</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressources.qrc">:/images/img/Untitled-2.jpg</pixmap>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="gestion_evenement">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>220</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#gestion_evenement{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}
+
+#gestion_evenement:pressed{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #fff07b;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}</string>
+     </property>
+     <property name="text">
+      <string>Evenement</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="gestion_employe">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>20</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#gestion_employe{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}
+
+#gestion_employe:pressed{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #fff07b;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}</string>
+     </property>
+     <property name="text">
+      <string>Employées</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="gestion_materiaux">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>180</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#gestion_materiaux{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}
+
+#gestion_materiaux:pressed{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #fff07b;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}</string>
+     </property>
+     <property name="text">
+      <string>Matériaux</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="gestion_dons">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>60</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#gestion_dons{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}
+
+#gestion_dons:pressed{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #fff07b;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}</string>
+     </property>
+     <property name="text">
+      <string>Dons</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="gestion_chantiers">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>100</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#gestion_chantiers{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}
+
+#gestion_chantiers:pressed{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #fff07b;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}</string>
+     </property>
+     <property name="text">
+      <string>Chantiers</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="gestion_fournisseurs">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>140</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#gestion_fournisseurs{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #318aff;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}
+
+#gestion_fournisseurs:pressed{border: 1px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #fff07b;
+font: bold, &quot;Arial&quot;;;
+text-align:center;}</string>
+     </property>
+     <property name="text">
+      <string>Fournisseurs</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="ressources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

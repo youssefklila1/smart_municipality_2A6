@@ -16,9 +16,21 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_connection_clicked();
 
-    void on_pushButton_6_clicked();
+    void on_gestion_materiaux_clicked();
+
+    void on_gestion_employe_clicked();
+
+    void on_gestion_dons_clicked();
+
+
+
+    void on_gestion_evenement_clicked();
+
+    void on_gestion_fournisseurs_clicked();
+
+    void on_gestion_chantiers_clicked();
 
 private:
     Ui::MainWindow *ui;

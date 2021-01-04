@@ -72,7 +72,7 @@ QSqlQueryModel * Chantiers::afficher_chantiers(QString nom)
 {
     QSqlQuery query;
     QSqlQueryModel *model = new QSqlQueryModel();
-    model->setQuery("select * from CHANTIERS WHERE NOM  = '"+ nom +"' ");
+    model->setQuery("select * from CHANTIERS WHERE NOM  LIKE '"+ nom +"%' ");
     query.bindValue(":NOM", nom);
     model->setHeaderData(0,Qt::Horizontal,"ID");
     model->setHeaderData(1,Qt::Horizontal,"NOM");

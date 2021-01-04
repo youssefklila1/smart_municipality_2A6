@@ -331,3 +331,42 @@ void Dialog::on_pushButton_7_clicked()
 }
 
 
+
+void Dialog::on_lineEdit_18_textChanged(const QString &arg1)
+{
+    QString NOM = ui->lineEdit_18->text();
+
+
+          bool test = ui->lineEdit_18->text()==NULL ;
+    if(test)
+         {
+             ui->Affichage_3->setModel(tmpchantiers.afficher());
+
+
+         }
+         else
+        {
+          ui->Affichage_3->setModel(tmpchantiers.afficher_chantiers(arg1));
+
+    }
+
+}
+
+void Dialog::on_lineEdit_17_textChanged(const QString &arg1)
+{
+
+        QString NOM = ui->lineEdit_17->text();
+
+              bool test = ui->lineEdit_17->text()==NULL ;
+        if(test)
+             {
+                 ui->Affichage_2->setModel(tmpsocietes.afficher());
+
+
+             }
+             else
+            {
+              ui->Affichage_2->setModel(tmpsocietes.afficher_societes(NOM));
+
+        }
+}

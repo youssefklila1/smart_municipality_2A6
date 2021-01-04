@@ -75,6 +75,10 @@ private slots:
 
     void on_Affichage_3_activated(const QModelIndex &index);
 
+    void on_lineEdit_18_textChanged(const QString &arg1);
+
+    void on_lineEdit_17_textChanged(const QString &arg1);
+
 private:
     Ui::Dialog *ui;
     Societes tmpsocietes;

@@ -39,7 +39,7 @@ background-image: url(:/image/Design baladitech CRUD.jpg);</string>
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <property name="iconSize">
     <size>
@@ -76,7 +76,7 @@ background-image: url(:/image/Design baladitech CRUD.jpg);</string>
       <string notr="true">background-image: url(:/image/Design baladitech inCRUD.png);</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
@@ -180,19 +180,6 @@ background-image: url(:/image/Design baladitech CRUD.jpg);</string>
          <width>231</width>
          <height>31</height>
         </rect>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_7">
-       <property name="geometry">
-        <rect>
-         <x>720</x>
-         <y>310</y>
-         <width>93</width>
-         <height>28</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Rechercher</string>
        </property>
       </widget>
       <widget class="QTableView" name="Affichage_2">
@@ -549,19 +536,6 @@ background-image: url(:/image/Design baladitech CRUD.jpg);</string>
        </property>
        <property name="text">
         <string>Rechercher:</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_8">
-       <property name="geometry">
-        <rect>
-         <x>700</x>
-         <y>330</y>
-         <width>93</width>
-         <height>28</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Rechercher</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_18">

@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="Mariages">
     <widget class="QTabWidget" name="tabWidget_mariages">
@@ -2160,6 +2160,53 @@ font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1:
         <string>OK</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="geometry">
+        <rect>
+         <x>620</x>
+         <y>280</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>imprimer</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>stat</string>
+      </attribute>
+      <widget class="QFrame" name="stat">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>30</y>
+         <width>561</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout"/>
+      </widget>
+      <widget class="QLabel" name="label_27">
+       <property name="geometry">
+        <rect>
+         <x>-4</x>
+         <y>-1</y>
+         <width>721</width>
+         <height>361</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressources.qrc">:/images/img/imf.jpg</pixmap>
+       </property>
+      </widget>
+      <zorder>label_27</zorder>
+      <zorder>stat</zorder>
      </widget>
     </widget>
     <widget class="QLabel" name="label_21">

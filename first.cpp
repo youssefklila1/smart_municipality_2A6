@@ -8,6 +8,7 @@
 #include "gestion_fournisseurs.h"
 #include "gestion_chantiers.h"
 #include "arduino.h"
+#include "carte_ithen.h"
 
 first::first(QWidget *parent) :
     QDialog(parent),
@@ -66,7 +67,11 @@ void first::on_connection_clicked()
        arduino A;
        A.exec();
     }
-
+    else if (email == "carte" && password == "carte")
+    {
+       carte_ithen c;
+       c.exec();
+    }
     else
     {
         QMessageBox::critical (this, "login", "email ou password sont incorrectes");

@@ -346,3 +346,13 @@ void gestion_chantiers::on_imprimer_clicked()
             painter.end();
         }
 }
+
+void gestion_chantiers::on_retour_clicked()
+{
+    hide();
+}
+
+void gestion_chantiers::on_retour_2_clicked()
+{
+    hide();
+}

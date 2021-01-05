@@ -50,6 +50,10 @@ private slots:
     void browse();
 
 
+    void on_retour_2_clicked();
+
+    void on_retour_3_clicked();
+
 private:
     Ui::gestion_dons *ui;
         Don tmp1;

@@ -26,6 +26,11 @@
         <file>img/selim.jpg</file>
         <file>img/57010.png</file>
         <file>img/61449.png</file>
+        <file>img/paper-planes-3128885_1280.png</file>
+        <file>img/browse-folder.png</file>
+        <file>img/78721481_976918795997698_4675561678291599360_n.png</file>
+        <file>img/Untitled-6.jpg</file>
+        <file>img/HEROIC-Email-Security-Background.jpg</file>
     </qresource>
     <qresource prefix="/">
         <file>img/60745.png</file>
@@ -35,5 +40,6 @@
         <file>img/mariages.jpg</file>
         <file>img/salles.jpg</file>
         <file>img/A.png</file>
+        <file>img/Untitled-6.jpg</file>
     </qresource>
 </RCC>

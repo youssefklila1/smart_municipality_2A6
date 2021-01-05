@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
+     <y>0</y>
      <width>821</width>
      <height>461</height>
     </rect>
@@ -483,8 +483,35 @@ font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1:
       <pixmap resource="ressources.qrc">:/images/img/selim.jpg</pixmap>
      </property>
     </widget>
+    <widget class="QPushButton" name="retour">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>0</y>
+       <width>75</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#retour{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#retour:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+     </property>
+     <property name="text">
+      <string>Retour</string>
+     </property>
+     <property name="icon">
+      <iconset resource="ressources.qrc">
+       <normaloff>:/images/img/61449.png</normaloff>:/images/img/61449.png</iconset>
+     </property>
+    </widget>
     <zorder>label_11</zorder>
     <zorder>tabWidget_2</zorder>
+    <zorder>retour</zorder>
    </widget>
    <widget class="QWidget" name="Ajouter">
     <attribute name="title">
@@ -1054,8 +1081,35 @@ font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1:
       <pixmap resource="ressources.qrc">:/images/img/selim.jpg</pixmap>
      </property>
     </widget>
+    <widget class="QPushButton" name="retour_2">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>10</y>
+       <width>75</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#retour{
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+#retour:pressed {
+font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #fff07b);}</string>
+     </property>
+     <property name="text">
+      <string>Retour</string>
+     </property>
+     <property name="icon">
+      <iconset resource="ressources.qrc">
+       <normaloff>:/images/img/61449.png</normaloff>:/images/img/61449.png</iconset>
+     </property>
+    </widget>
     <zorder>label_10</zorder>
     <zorder>tabWidget_3</zorder>
+    <zorder>retour_2</zorder>
    </widget>
   </widget>
  </widget>

@@ -77,6 +77,10 @@ private slots:
 
     void on_imprimer_clicked();
 
+    void on_retour_clicked();
+
+    void on_retour_2_clicked();
+
 private:
     Ui::gestion_chantiers *ui;
         Societes tmpsocietes;

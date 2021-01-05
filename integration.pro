@@ -12,7 +12,9 @@ CONFIG += c++11
 SOURCES += \
     arduino.cpp \
     arduino_alarm.cpp \
+    arduinocarte.cpp \
     bondescommandes.cpp \
+    carte_ithen.cpp \
     chantiers.cpp \
     client.cpp \
     conges.cpp \
@@ -42,7 +44,9 @@ SOURCES += \
 HEADERS += \
     arduino.h \
     arduino_alarm.h \
+    arduinocarte.h \
     bondescommandes.h \
+    carte_ithen.h \
     chantiers.h \
     client.h \
     conges.h \
@@ -70,6 +74,7 @@ HEADERS += \
 
 FORMS += \
     arduino.ui \
+    carte_ithen.ui \
     first.ui \
     gestion_chantiers.ui \
     gestion_dons.ui \

@@ -409,3 +409,13 @@ void   gestion_dons::mailSent(QString status)
     ui->msg->clear();
     ui->mail_pass->clear();
 }
+
+void gestion_dons::on_retour_2_clicked()
+{
+    hide();
+}
+
+void gestion_dons::on_retour_3_clicked()
+{
+    hide();
+}

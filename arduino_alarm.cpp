@@ -27,7 +27,7 @@ int arduino_code ::connect_arduino()
  {
   if(serial_port_info.hasVendorIdentifier()&& serial_port_info.hasProductIdentifier())
     {
-      if(serial_port_info.vendorIdentifier()==arduino_uno_vendor_id && serial_port_info.productIdentifier()==arduino_uno_producy)
+      if(serial_port_info.productIdentifier()==arduino_uno_producy && serial_port_info.vendorIdentifier()==arduino_uno_vendor_id)
       {
        arduino_is_available=true ;
        arduino_port_name=serial_port_info.portName();
@@ -56,7 +56,7 @@ int arduino_code::close_arduino()
   {
        serial->close();
        return 0;
-  }
+   }
   return 1;
 }
 
@@ -65,14 +65,12 @@ QByteArray arduino_code::read_from_arduino()
 {
 
   if(serial->isReadable())
- {
-    data=serial->readAll();
-    return data;
- }
+  {
+      data=serial->readAll();
+      return data;
+  }
 
 }
-
-
 
 int arduino_code::write_to_arduino(QByteArray d)
 {
@@ -83,8 +81,7 @@ if(serial->isWritable())
 }
 
 else
-{
 qDebug() <<"couldnt write to serial " ;
-}
 
 }
+

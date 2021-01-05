@@ -550,3 +550,18 @@ void   gestion_employe::mailSent(QString status)
     ui->msg->clear();
     ui->mail_pass->clear();
 }
+
+void gestion_employe::on_retour_2_clicked()
+{
+    hide();
+}
+
+void gestion_employe::on_retour_3_clicked()
+{
+    hide();
+}
+
+void gestion_employe::on_retour_4_clicked()
+{
+    hide();
+}

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>848</width>
-    <height>559</height>
+    <width>793</width>
+    <height>543</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -73,7 +73,7 @@ QLineEdit {
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -82,7 +82,7 @@ QLineEdit {
     <widget class="QTabWidget" name="tabWidget_2">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>20</x>
        <y>40</y>
        <width>731</width>
        <height>411</height>
@@ -92,7 +92,7 @@ QLineEdit {
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_6">
       <attribute name="icon">
@@ -921,7 +921,7 @@ font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1:
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_7">
       <attribute name="title">
@@ -1786,24 +1786,40 @@ font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1:
     <widget class="QPushButton" name="sendBtn">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>20</x>
        <y>290</y>
-       <width>651</width>
+       <width>761</width>
        <height>23</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: bold, &quot;Arial&quot;;;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);</string>
+     </property>
      <property name="text">
       <string>Send</string>
+     </property>
+     <property name="icon">
+      <iconset resource="ressources.qrc">
+       <normaloff>:/images/img/paper-planes-3128885_1280.png</normaloff>:/images/img/paper-planes-3128885_1280.png</iconset>
      </property>
     </widget>
     <widget class="QLineEdit" name="rcpt">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>20</x>
        <y>30</y>
-       <width>491</width>
+       <width>541</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: bold, &quot;Arial&quot;;;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);</string>
      </property>
      <property name="placeholderText">
       <string>recipient</string>
@@ -1818,6 +1834,12 @@ font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1:
        <height>41</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: bold, &quot;Arial&quot;;;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);</string>
+     </property>
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
      </property>
@@ -1828,11 +1850,17 @@ font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1:
     <widget class="QLineEdit" name="file">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>20</x>
        <y>140</y>
-       <width>571</width>
+       <width>621</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: bold, &quot;Arial&quot;;;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);</string>
      </property>
      <property name="placeholderText">
       <string>attachement here</string>
@@ -1841,11 +1869,17 @@ font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1:
     <widget class="QTextEdit" name="msg">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>20</x>
        <y>180</y>
-       <width>651</width>
+       <width>761</width>
        <height>101</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: bold, &quot;Arial&quot;;;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);</string>
      </property>
      <property name="placeholderText">
       <string>type your message here ...</string>
@@ -1856,27 +1890,70 @@ font: bold, &quot;Arial&quot;;;     background-color: qlineargradient(x1: 0, y1:
       <rect>
        <x>650</x>
        <y>150</y>
-       <width>75</width>
+       <width>91</width>
        <height>24</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: bold, &quot;Arial&quot;;;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);</string>
+     </property>
      <property name="text">
       <string>Browse ...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="ressources.qrc">
+       <normaloff>:/images/img/browse-folder.png</normaloff>:/images/img/browse-folder.png</iconset>
      </property>
     </widget>
     <widget class="QLineEdit" name="subject">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>20</x>
        <y>90</y>
-       <width>651</width>
+       <width>701</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: bold, &quot;Arial&quot;;;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);</string>
      </property>
      <property name="placeholderText">
       <string>subject</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_40">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>791</width>
+       <height>501</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressources.qrc">:/images/img/HEROIC-Email-Security-Background.jpg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <zorder>label_40</zorder>
+    <zorder>sendBtn</zorder>
+    <zorder>rcpt</zorder>
+    <zorder>mail_pass</zorder>
+    <zorder>file</zorder>
+    <zorder>msg</zorder>
+    <zorder>browseBtn</zorder>
+    <zorder>subject</zorder>
    </widget>
   </widget>
  </widget>

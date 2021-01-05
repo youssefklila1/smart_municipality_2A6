@@ -2,6 +2,20 @@
 #include "ui_gestion_evenement.h"
 #include "client.h"
 #include <QMessageBox>
+#include <QMessageBox>
+#include<QComboBox>
+#include<QPdfWriter>
+#include<QPainter>
+#include<QDesktopServices>
+#include<QUrl>
+#include <QSql>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include<QMessageBox>
+#include<QtCharts>
+#include<QChartView>
+#include<QPieSeries>
+#include<QPieSlice>
 
 
 gestion_evenement::gestion_evenement(QWidget *parent) :
@@ -14,7 +28,7 @@ gestion_evenement::gestion_evenement(QWidget *parent) :
        ui->tabAfficher->setModel(tmpclient.afficher());
        ui->tabAfficher2->setModel(tmpsalles.afficher());
        ui->comboBox->setModel(tmpsalles.afficherCLIENT()) ;
-
+       gestion_evenement::afficherStatistique();
 }
 
 gestion_evenement::~gestion_evenement()
@@ -318,4 +332,114 @@ void gestion_evenement::on_pushButton_rechercherNOM_clicked()
 {
     QString nom = ui->lineEdit_rechercherNOM->text();
         ui->tabAfficher->setModel(tmpclient.rechercheNOM(nom));
+}
+
+void gestion_evenement::on_pushButton_5_clicked()
+{
+    QPdfWriter pdf("C:/Users/asus/Desktop/imprimer_karim/Pdf.pdf");
+    QPainter painter(&pdf);
+   int i = 4000;
+        painter.setPen(Qt::red);
+        painter.setFont(QFont("Arial Black", 30));
+        painter.drawText(1100,1200,"Liste des salles ");
+        painter.setPen(Qt::black);
+        painter.setFont(QFont("Arial", 50));
+
+        painter.drawRect(100,100,7300,2600);
+
+        painter.drawRect(0,3000,9600,500);
+        painter.setFont(QFont("Arial", 9));
+        painter.drawText(200,3300,"REF");
+        painter.drawText(1700,3300,"LIEU");
+        painter.drawText(3200,3300,"DATES");
+        painter.drawText(4900,3300,"CLIENT");
+
+        QSqlQuery query;
+        query.prepare("select * from SALLES");
+        query.exec();
+        while (query.next())
+        {
+            painter.drawText(200,i,query.value(0).toString());
+            painter.drawText(1700,i,query.value(1).toString());
+            painter.drawText(3200,i,query.value(2).toString());
+            painter.drawText(4900,i,query.value(3).toString());
+
+           i = i + 500;
+        }
+        int reponse = QMessageBox::question(this, "Génerer PDF", "<PDF Enregistré>...Vous Voulez Affichez Le PDF ?", QMessageBox::Yes |  QMessageBox::No);
+            if (reponse == QMessageBox::Yes)
+            {
+                QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/asus/Desktop/imprimer_karim/Pdf.pdf"));
+                painter.end();
+            }
+            if (reponse == QMessageBox::No)
+            {
+                 painter.end();
+            }
+}
+
+
+void gestion_evenement::afficherStatistique(){
+
+
+    QSqlQuery query;
+
+
+            QString nb_mariages="";
+            query.prepare("SELECT COUNT(*) FROM CLIENT");
+            query.exec();
+            while(query.next()){
+            nb_mariages= query.value(0).toString();}
+
+
+
+            QString nb_salles="";
+            query.prepare("SELECT COUNT(*) FROM SALLES");
+            query.exec();
+            while(query.next()){
+            nb_salles= query.value(0).toString();}
+
+
+
+        QBarSet *set0 = new QBarSet("CLIENT");
+
+
+           *set0 << nb_mariages.toInt()  << nb_salles.toInt()   ;
+        QBarSeries *series = new QBarSeries();
+         series->append(set0);
+         QChart *chart = new QChart();
+             chart->addSeries(series);
+             chart->setTitle("statistique evenements");
+             chart->setAnimationOptions(QChart::SeriesAnimations);
+
+             QStringList categories;
+                categories << "nombre mariages" <<  "nombre salles" ;
+                QBarCategoryAxis *axisX = new QBarCategoryAxis();
+                axisX->append(categories);
+                chart->addAxis(axisX, Qt::AlignBottom);
+                series->attachAxis(axisX);
+
+
+
+                chart->legend()->setVisible(true);
+                    chart->legend()->setAlignment(Qt::AlignBottom);
+
+                    QChartView *chartView = new QChartView(chart);
+                    chartView->setRenderHint(QPainter::Antialiasing);
+                    chartView->setParent(ui->stat);
+                    chartView->setFixedSize(ui->stat->size());
+                    QPalette pal = qApp->palette();
+                    pal.setColor(QPalette::Window, QRgb(0xffffff));
+                    pal.setColor(QPalette::WindowText, QRgb(0x404044));
+                    qApp->setPalette(pal);
+}
+
+void gestion_evenement::on_retour_3_clicked()
+{
+    hide();
+}
+
+void gestion_evenement::on_retour_2_clicked()
+{
+    hide();
 }

@@ -71,6 +71,13 @@ private slots:
 
     void on_pushButton_rechercherNOM_clicked();
 
+    void on_pushButton_5_clicked();
+    void afficherStatistique();
+
+    void on_retour_3_clicked();
+
+    void on_retour_2_clicked();
+
 private:
     Ui::gestion_evenement *ui;
         Client tmpclient;

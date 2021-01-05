@@ -430,3 +430,18 @@ void gestion_fournisseurs::on_pushButton_3_clicked()
                                                painter.end();
                                           }
 }
+
+void gestion_fournisseurs::on_retour_2_clicked()
+{
+    hide();
+}
+
+void gestion_fournisseurs::on_retour_3_clicked()
+{
+    hide();
+}
+
+void gestion_fournisseurs::on_retour_4_clicked()
+{
+    hide();
+}

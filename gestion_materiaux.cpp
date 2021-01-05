@@ -1,5 +1,6 @@
 #include "gestion_materiaux.h"
 #include "ui_gestion_materiaux.h"
+#include "first.h"
 #include "connection.h"
 #include "materiauxmanq.h"
 #include "materiauxposs.h"
@@ -562,37 +563,34 @@ void gestion_materiaux::on_comboBox_rechercher_mat_maint_activated(int index)
 
 
 
-void gestion_materiaux::on_retour_clicked()
-{
-    gestion_materiaux m;
-}
+
 
 void gestion_materiaux::afficherStatistique(){
 
 
     QSqlQuery query;
 
-    //nombre de dons
-            QString nb_mat_poss="";
+
+            QString nb_mariages="";
             query.prepare("SELECT COUNT(*) FROM MATERIAUX_POSS");
             query.exec();
             while(query.next()){
-            nb_mat_poss= query.value(0).toString();}
+            nb_mariages= query.value(0).toString();}
 
-     //nombre de famille
 
-            QString nb_mat_manq="";
+
+            QString nb_salles="";
             query.prepare("SELECT COUNT(*) FROM MATERIAUX_MANQ");
             query.exec();
             while(query.next()){
-            nb_mat_manq= query.value(0).toString();}
+            nb_salles= query.value(0).toString();}
 
 
 
-        QBarSet *set0 = new QBarSet("Jane");
+        QBarSet *set0 = new QBarSet("MATERIAUX");
 
 
-           *set0 << nb_mat_poss.toInt()  << nb_mat_manq.toInt()   ;
+           *set0 << nb_mariages.toInt()  << nb_salles.toInt()   ;
         QBarSeries *series = new QBarSeries();
          series->append(set0);
          QChart *chart = new QChart();
@@ -601,7 +599,7 @@ void gestion_materiaux::afficherStatistique(){
              chart->setAnimationOptions(QChart::SeriesAnimations);
 
              QStringList categories;
-                categories << "nombre materiaux poss " <<  "nombre materiaux manq" ;
+                categories << "nombre materiaux posssession " <<  "nombre materiaux manquant" ;
                 QBarCategoryAxis *axisX = new QBarCategoryAxis();
                 axisX->append(categories);
                 chart->addAxis(axisX, Qt::AlignBottom);
@@ -615,6 +613,11 @@ void gestion_materiaux::afficherStatistique(){
                     QChartView *chartView = new QChartView(chart);
                     chartView->setRenderHint(QPainter::Antialiasing);
                     chartView->setParent(ui->horizontalFrame);
+                    chartView->setFixedSize(ui->horizontalFrame->size());
+                    QPalette pal = qApp->palette();
+                    pal.setColor(QPalette::Window, QRgb(0xffffff));
+                    pal.setColor(QPalette::WindowText, QRgb(0x404044));
+                    qApp->setPalette(pal);
 }
 void  gestion_materiaux::browse()
 {
@@ -656,4 +659,19 @@ void   gestion_materiaux::mailSent(QString status)
     ui->file->clear();
     ui->msg->clear();
     ui->mail_pass->clear();
+}
+
+void gestion_materiaux::on_retour_2_clicked()
+{
+    hide();
+}
+
+void gestion_materiaux::on_retour_3_clicked()
+{
+    hide();
+}
+
+void gestion_materiaux::on_retour_clicked()
+{
+   hide();
 }
